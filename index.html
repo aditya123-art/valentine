@@ -23,6 +23,7 @@
             --campus-green: #006747;
             --campus-white: #ffffff;
             --engineering-gray: #2c3e50;
+            --admin-dark: #1a1a2e;
         }
 
         body {
@@ -579,7 +580,7 @@
         }
 
         .lab-card::after {
-            content: '';
+            content: 'SBJIT';
             position: absolute;
             top: 10px;
             right: 10px;
@@ -686,6 +687,305 @@
             color: #555;
             font-size: 1.1rem;
             line-height: 1.7;
+        }
+
+        /* Admin Login Modal */
+        .admin-login-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .admin-login-modal.show {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .login-container {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            border: 4px solid var(--sbjit-blue);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h2 {
+            color: var(--sbjit-blue);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .login-form .input-group {
+            margin-bottom: 25px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .login-form input:focus {
+            border-color: var(--sbjit-blue);
+            outline: none;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(12, 35, 64, 0.1);
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, var(--sbjit-blue) 0%, var(--admin-dark) 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(12, 35, 64, 0.3);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(12, 35, 64, 0.4);
+        }
+
+        .login-error {
+            color: var(--sbjit-red);
+            font-size: 1rem;
+            margin-top: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .login-error.show {
+            display: block;
+        }
+
+        .close-login {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-login:hover {
+            color: var(--sbjit-blue);
+        }
+
+        /* Admin Data Panel (Hidden from students) */
+        .admin-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--admin-dark);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            width: 500px;
+            z-index: 1000;
+            border: 3px solid var(--sbjit-gold);
+            display: none;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .admin-panel.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            background: var(--admin-dark);
+            z-index: 1;
+        }
+
+        .admin-header h3 {
+            color: var(--sbjit-gold);
+            font-size: 1.5rem;
+        }
+
+        .admin-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .admin-btn {
+            background: var(--sbjit-gold);
+            color: var(--admin-dark);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .admin-btn:hover {
+            background: white;
+        }
+
+        .logout-admin {
+            background: var(--sbjit-red);
+            color: white;
+        }
+
+        .logout-admin:hover {
+            background: #ff4d4d;
+        }
+
+        .close-admin {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-admin:hover {
+            color: var(--sbjit-gold);
+        }
+
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid var(--sbjit-gold);
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--sbjit-gold);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .data-table {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .data-table h4 {
+            color: var(--sbjit-gold);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--sbjit-gold);
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .admin-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--sbjit-blue);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(12, 35, 64, 0.4);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .admin-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(12, 35, 64, 0.6);
         }
 
         /* User Reviews Section */
@@ -849,164 +1149,6 @@
             text-align: right;
         }
 
-        /* Admin Data Panel (Hidden from students) */
-        .admin-panel {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            width: 500px;
-            z-index: 1000;
-            border: 3px solid var(--sbjit-blue);
-            display: none;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .admin-panel.show {
-            display: block;
-            animation: slideIn 0.5s ease;
-        }
-
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #eee;
-            position: sticky;
-            top: 0;
-            background: white;
-            z-index: 1;
-        }
-
-        .admin-header h3 {
-            color: var(--sbjit-blue);
-            font-size: 1.5rem;
-        }
-
-        .admin-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .admin-btn {
-            background: var(--sbjit-blue);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .admin-btn:hover {
-            background: var(--sbjit-light-blue);
-        }
-
-        .close-admin {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #999;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close-admin:hover {
-            color: var(--sbjit-blue);
-        }
-
-        .admin-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .stat-box {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            border-left: 4px solid var(--sbjit-blue);
-        }
-
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--sbjit-blue);
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .data-table {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-
-        th {
-            background-color: #f5f5f5;
-            color: var(--sbjit-blue);
-            font-weight: 600;
-            position: sticky;
-            top: 0;
-        }
-
-        tr:hover {
-            background-color: #f9f9f9;
-        }
-
-        .admin-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--sbjit-blue);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(12, 35, 64, 0.4);
-            z-index: 999;
-            transition: all 0.3s;
-        }
-
-        .admin-toggle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(12, 35, 64, 0.6);
-        }
-
         /* Nagpur Local Spots */
         .nagpur-spots {
             background: white;
@@ -1140,6 +1282,22 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
+        /* Admin Data Info */
+        .admin-info {
+            background: rgba(255, 184, 28, 0.1);
+            border: 1px solid var(--sbjit-gold);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #ffb81c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero h1 {
@@ -1152,6 +1310,15 @@
             
             .calculator-container {
                 flex-direction: column;
+            }
+            
+            .admin-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .admin-panel {
+                width: 95%;
+                right: 2.5%;
             }
         }
 
@@ -1184,8 +1351,8 @@
             }
             
             .admin-panel {
-                width: 90%;
-                right: 5%;
+                width: 95%;
+                right: 2.5%;
                 bottom: 80px;
             }
             
@@ -1249,20 +1416,20 @@
                     <span>Computer Engineering</span>
                 </div>
                 <div class="dept-badge">
-                    <i class="fas fa-microchip"></i>
-                    <span>Electronics & Telecomm</span>
+                    <i class="fas fa-dna"></i>
+                    <span>AIDS Engineering</span>
                 </div>
                 <div class="dept-badge">
-                    <i class="fas fa-cogs"></i>
-                    <span>Mechanical Engineering</span>
+                    <i class="fas fa-network-wired"></i>
+                    <span>IT Engineering</span>
                 </div>
                 <div class="dept-badge">
                     <i class="fas fa-robot"></i>
                     <span>AIML Engineering</span>
                 </div>
                 <div class="dept-badge">
-                    <i class="fas fa-bolt"></i>
-                    <span>Electrical Engineering</span>
+                    <i class="fas fa-microchip"></i>
+                    <span>Electronics & Telecomm</span>
                 </div>
             </div>
             
@@ -1312,11 +1479,12 @@
                             <select id="yourDepartment">
                                 <option value="">Select Engineering Branch</option>
                                 <option value="cse">Computer Science & Engineering</option>
+                                <option value="aids">AIDS Engineering</option>
+                                <option value="it">Information Technology</option>
+                                <option value="aiml">AIML Engineering</option>
                                 <option value="entc">Electronics & Telecommunication</option>
                                 <option value="mech">Mechanical Engineering</option>
-                                <option value="aiml">AIML Engineering</option>
                                 <option value="electrical">Electrical Engineering</option>
-                                <option value="it">Information Technology</option>
                             </select>
                         </div>
                     </div>
@@ -1331,11 +1499,12 @@
                             <select id="crushDepartment">
                                 <option value="">Select Engineering Branch</option>
                                 <option value="cse">Computer Science & Engineering</option>
+                                <option value="aids">AIDS Engineering</option>
+                                <option value="it">Information Technology</option>
+                                <option value="aiml">AIML Engineering</option>
                                 <option value="entc">Electronics & Telecommunication</option>
                                 <option value="mech">Mechanical Engineering</option>
-                                <option value="aiml">AIML Engineering</option>
                                 <option value="electrical">Electrical Engineering</option>
-                                <option value="it">Information Technology</option>
                             </select>
                         </div>
                     </div>
@@ -1390,62 +1559,6 @@
         </div>
     </section>
 
-    <!-- Engineering Lab Date Ideas -->
-    <section class="section" id="dates">
-        <div class="container">
-            <h2 class="section-title">Engineering Date Ideas</h2>
-            <div class="lab-date-ideas">
-                <div class="lab-card">
-                    <div class="lab-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Code Together</h3>
-                    <p>Pair programming session in the computer lab. Solve coding problems together and bond over algorithms.</p>
-                    <div class="lab-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Computer Lab 4</span>
-                    </div>
-                </div>
-                
-                <div class="lab-card">
-                    <div class="lab-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <h3>Circuit Building</h3>
-                    <p>Build a simple circuit together in electronics lab. LED lights make for a romantic engineering project.</p>
-                    <div class="lab-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Electronics Lab</span>
-                    </div>
-                </div>
-                
-                <div class="lab-card">
-                    <div class="lab-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Study Session</h3>
-                    <p>Prepare for upcoming exams together in the library. Share notes and help each other with tough subjects.</p>
-                    <div class="lab-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Central Library</span>
-                    </div>
-                </div>
-                
-                <div class="lab-card">
-                    <div class="lab-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>AI Project Together</h3>
-                    <p>Work on an AI/ML project together. Train models and analyze data side by side.</p>
-                    <div class="lab-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>AIML Lab</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- User Reviews Section -->
     <section class="section" id="reviews">
         <div class="container">
@@ -1466,11 +1579,12 @@
                                     <select id="reviewerBranch" required>
                                         <option value="">Select Branch</option>
                                         <option value="cse">Computer Science & Engineering</option>
+                                        <option value="aids">AIDS Engineering</option>
+                                        <option value="it">Information Technology</option>
+                                        <option value="aiml">AIML Engineering</option>
                                         <option value="entc">Electronics & Telecommunication</option>
                                         <option value="mech">Mechanical Engineering</option>
-                                        <option value="aiml">AIML Engineering</option>
                                         <option value="electrical">Electrical Engineering</option>
-                                        <option value="it">Information Technology</option>
                                     </select>
                                 </div>
                             </div>
@@ -1510,174 +1624,6 @@
         </div>
     </section>
 
-    <!-- Engineering Love Stories -->
-    <section class="section" id="stories">
-        <div class="container">
-            <h2 class="section-title">SBJIT Engineering Love Stories</h2>
-            <div class="engineering-stories">
-                <div class="stories-title">Real Stories from SBJIT Engineering Couples</div>
-                
-                <div class="story">
-                    <div class="story-header">
-                        <div class="story-avatar">AK</div>
-                        <div class="story-author">
-                            <h4>Arjun & Kavya</h4>
-                            <p>Computer Engineering, Batch of 2024</p>
-                        </div>
-                    </div>
-                    <div class="story-content">
-                        "We were lab partners in Data Structures lab. He was debugging my code and I was helping him with theory. One late night in the computer lab, while working on a project submission, we realized we had more in common than just C++ programming. Now we've been together for 2 years and still code together!"
-                    </div>
-                </div>
-                
-                <div class="story">
-                    <div class="story-header">
-                        <div class="story-avatar">SR</div>
-                        <div class="story-author">
-                            <h4>Sneha & Rohan</h4>
-                            <p>ENTC & Mechanical, Batch of 2023</p>
-                        </div>
-                    </div>
-                    <div class="story-content">
-                        "We met during the college tech fest 'Technovation'. I was from ENTC presenting a sensor project, and he was from Mechanical with a robotics display. We started discussing interdisciplinary projects, which turned into coffee at the canteen, then study dates in the library. Now we're working together on an IoT startup!"
-                    </div>
-                </div>
-                
-                <div class="story">
-                    <div class="story-header">
-                        <div class="story-avatar">PM</div>
-                        <div class="story-author">
-                            <h4>Priya & Mohit</h4>
-                            <p>AIML Engineering, Batch of 2025</p>
-                        </div>
-                    </div>
-                    <div class="story-content">
-                        "We were in the same study group for Machine Learning. He helped me understand neural networks, I helped him with data preprocessing. Our study sessions turned into campus walks, then Nagpur city dates. SBJIT gave us not just engineering degrees but a lifetime partnership."
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Nagpur Local Date Spots -->
-    <section class="section" id="nagpur">
-        <div class="container">
-            <h2 class="section-title">Nagpur Date Spots for Engineers</h2>
-            <div class="nagpur-spots">
-                <div class="spots-title">Perfect places near SBJIT campus</div>
-                <div class="spots-grid">
-                    <div class="spot-card">
-                        <h4>Futala Lake</h4>
-                        <p>Beautiful evening walks by the lake, perfect for engineering students on a budget</p>
-                    </div>
-                    <div class="spot-card">
-                        <h4>Empress City Mall</h4>
-                        <p>Movie dates and food court hangouts, just a short ride from campus</p>
-                    </div>
-                    <div class="spot-card">
-                        <h4>Deekshabhoomi</h4>
-                        <p>Peaceful and historical spot for meaningful conversations</p>
-                    </div>
-                    <div class="spot-card">
-                        <h4>Ambazari Garden</h4>
-                        <p>Beautiful gardens perfect for picnics and studying together outdoors</p>
-                    </div>
-                    <div class="spot-card">
-                        <h4>Zero Mile</h4>
-                        <p>Historic landmark for short dates between classes</p>
-                    </div>
-                    <div class="spot-card">
-                        <h4>Science Park</h4>
-                        <p>Perfect for engineering minds to explore and discuss</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Admin Panel Toggle -->
-    <div class="admin-toggle" id="adminToggle">
-        <i class="fas fa-eye"></i>
-    </div>
-
-    <!-- Admin Data Panel (Hidden from students) -->
-    <div class="admin-panel" id="adminPanel">
-        <div class="admin-header">
-            <h3>SBJIT Admin Dashboard - Engineering Crush Data</h3>
-            <div class="admin-actions">
-                <button class="admin-btn" id="exportData">Export Data</button>
-                <button class="admin-btn" id="clearData">Clear Data</button>
-            </div>
-            <button class="close-admin" id="closeAdmin">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <div class="admin-stats">
-            <div class="stat-box">
-                <div class="stat-value" id="totalTests">0</div>
-                <div class="stat-label">Total Tests</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="avgScore">0%</div>
-                <div class="stat-label">Avg. Score</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="todayTests">0</div>
-                <div class="stat-label">Today's Tests</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="interBranch">0</div>
-                <div class="stat-label">Inter-Branch</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="totalReviews">0</div>
-                <div class="stat-label">Total Reviews</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="avgRating">0.0</div>
-                <div class="stat-label">Avg. Rating</div>
-            </div>
-        </div>
-        
-        <div class="data-table">
-            <h4 style="margin-bottom: 15px; color: var(--sbjit-blue);">Love Test Data</h4>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Student Name</th>
-                        <th>Branch</th>
-                        <th>Crush Name</th>
-                        <th>Crush Branch</th>
-                        <th>Score</th>
-                        <th>Time</th>
-                    </tr>
-                </thead>
-                <tbody id="dataTableBody">
-                    <!-- Data will be inserted here by JavaScript -->
-                </tbody>
-            </table>
-            
-            <h4 style="margin: 30px 0 15px; color: var(--sbjit-blue);">Review Data</h4>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Student Name</th>
-                        <th>Branch</th>
-                        <th>Rating</th>
-                        <th>Review</th>
-                        <th>Time</th>
-                    </tr>
-                </thead>
-                <tbody id="reviewsTableBody">
-                    <!-- Reviews will be inserted here by JavaScript -->
-                </tbody>
-            </table>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer id="about">
         <div class="container">
@@ -1691,11 +1637,11 @@
                     <h3>Engineering Branches</h3>
                     <ul class="campus-departments">
                         <li><i class="fas fa-laptop-code"></i> Computer Science & Engineering</li>
+                        <li><i class="fas fa-dna"></i> AIDS Engineering</li>
+                        <li><i class="fas fa-network-wired"></i> Information Technology</li>
+                        <li><i class="fas fa-robot"></i> AIML Engineering</li>
                         <li><i class="fas fa-microchip"></i> Electronics & Telecommunication</li>
                         <li><i class="fas fa-cogs"></i> Mechanical Engineering</li>
-                        <li><i class="fas fa-robot"></i> AIML Engineering</li>
-                        <li><i class="fas fa-bolt"></i> Electrical Engineering</li>
-                        <li><i class="fas fa-network-wired"></i> Information Technology</li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1718,11 +1664,155 @@
         </div>
     </footer>
 
+    <!-- Admin Login Modal -->
+    <div class="admin-login-modal" id="adminLoginModal">
+        <div class="login-container">
+            <button class="close-login" id="closeLogin">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="login-header">
+                <h2>Admin Login</h2>
+                <p>Access restricted to authorized personnel only</p>
+            </div>
+            <form class="login-form" id="adminLoginForm">
+                <div class="input-group">
+                    <label for="adminUsername"><i class="fas fa-user-shield"></i> Username</label>
+                    <input type="text" id="adminUsername" placeholder="" required>
+                </div>
+                <div class="input-group">
+                    <label for="adminPassword"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="adminPassword" placeholder="" required>
+                </div>
+                <div class="login-error" id="loginError">
+                    Invalid username or password. Please try again.
+                </div>
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Login to Admin Panel
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel Toggle -->
+    <div class="admin-toggle" id="adminToggle">
+        <i class="fas fa-user-shield"></i>
+    </div>
+
+    <!-- Admin Data Panel (Hidden from students) -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <h3>SBJIT Admin Dashboard</h3>
+            <div class="admin-actions">
+                <button class="admin-btn" id="exportData">
+                    <i class="fas fa-download"></i> Export Data
+                </button>
+                <button class="admin-btn" id="clearData">
+                    <i class="fas fa-trash"></i> Clear All Data
+                </button>
+                <button class="admin-btn logout-admin" id="logoutAdmin">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+            <button class="close-admin" id="closeAdmin">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="admin-info">
+            <i class="fas fa-info-circle"></i>
+            <span>All user data is automatically recorded and stored locally. Data is accessible only through this admin panel.</span>
+        </div>
+        
+        <div class="admin-stats">
+            <div class="stat-box">
+                <div class="stat-value" id="totalTests">0</div>
+                <div class="stat-label">Total Tests</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="avgScore">0%</div>
+                <div class="stat-label">Avg. Score</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="todayTests">0</div>
+                <div class="stat-label">Today's Tests</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="totalUsers">0</div>
+                <div class="stat-label">Unique Users</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="totalReviews">0</div>
+                <div class="stat-label">Total Reviews</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="avgRating">0.0</div>
+                <div class="stat-label">Avg. Rating</div>
+            </div>
+        </div>
+        
+        <div class="data-table">
+            <h4>All User Love Test Data</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User Name</th>
+                        <th>Branch</th>
+                        <th>Crush Name</th>
+                        <th>Crush Branch</th>
+                        <th>Score</th>
+                        <th>Date & Time</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTableBody">
+                    <!-- Data will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+            
+            <h4>All User Reviews</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User Name</th>
+                        <th>Branch</th>
+                        <th>Rating</th>
+                        <th>Review</th>
+                        <th>Date & Time</th>
+                    </tr>
+                </thead>
+                <tbody id="reviewsTableBody">
+                    <!-- Reviews will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <script>
         // SBJIT engineering campus data storage
         let engineeringLoveData = JSON.parse(localStorage.getItem('sbjitEngineeringLove2026')) || [];
         let engineeringReviews = JSON.parse(localStorage.getItem('sbjitEngineeringReviews2026')) || [];
-        let adminPanelVisible = false;
+        let adminLoggedIn = false;
+        const ADMIN_CREDENTIALS = {
+            username: "aditya123",
+            password: "Aditya123#@"
+        };
+
+        // User tracking system
+        function generateUserId() {
+            return 'USER_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        function getBrowserInfo() {
+            return {
+                userAgent: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                screenResolution: `${window.screen.width}x${window.screen.height}`,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                timestamp: new Date().toISOString()
+            };
+        }
 
         // Valentine's Day 2026 countdown
         function initCountdown() {
@@ -1799,11 +1889,12 @@
         function getEngineeringLoveDescription(score, userBranch, crushBranch) {
             const branchNames = {
                 'cse': 'Computer Science & Engineering',
+                'aids': 'AIDS Engineering',
+                'it': 'Information Technology',
+                'aiml': 'AIML Engineering',
                 'entc': 'Electronics & Telecommunication',
                 'mech': 'Mechanical Engineering',
-                'aiml': 'AIML Engineering',
-                'electrical': 'Electrical Engineering',
-                'it': 'Information Technology'
+                'electrical': 'Electrical Engineering'
             };
             
             if (score >= 95) {
@@ -1819,8 +1910,11 @@
 
         // Save engineering test data to localStorage
         function saveEngineeringData(userName, userBranch, crushName, crushBranch, year, lab, score) {
+            const browserInfo = getBrowserInfo();
+            const userId = generateUserId();
+            
             const testEntry = {
-                id: Date.now(),
+                id: userId,
                 userName,
                 userBranch,
                 crushName,
@@ -1828,38 +1922,56 @@
                 year,
                 lab,
                 score,
-                timestamp: new Date().toLocaleString()
+                timestamp: new Date().toLocaleString(),
+                date: new Date().toLocaleDateString(),
+                browserInfo: browserInfo,
+                entryType: 'love_test'
             };
             
             engineeringLoveData.unshift(testEntry); // Add to beginning
             localStorage.setItem('sbjitEngineeringLove2026', JSON.stringify(engineeringLoveData));
             
-            // Update admin panel
-            updateAdminPanel();
+            // Update admin panel if admin is logged in
+            if (adminLoggedIn) {
+                updateAdminPanel();
+            }
+            
+            // Log to console for debugging (remove in production)
+            console.log('User test data saved:', testEntry);
             
             return testEntry;
         }
 
         // Save review to localStorage
         function saveReview(reviewerName, reviewerBranch, rating, reviewText) {
+            const browserInfo = getBrowserInfo();
+            const userId = generateUserId();
+            
             const reviewEntry = {
-                id: Date.now(),
+                id: userId,
                 reviewerName,
                 reviewerBranch,
                 rating,
                 reviewText,
                 timestamp: new Date().toLocaleString(),
-                date: new Date().toLocaleDateString()
+                date: new Date().toLocaleDateString(),
+                browserInfo: browserInfo,
+                entryType: 'review'
             };
             
             engineeringReviews.unshift(reviewEntry); // Add to beginning
             localStorage.setItem('sbjitEngineeringReviews2026', JSON.stringify(engineeringReviews));
             
-            // Update admin panel
-            updateAdminPanel();
+            // Update admin panel if admin is logged in
+            if (adminLoggedIn) {
+                updateAdminPanel();
+            }
             
             // Display the new review
             displayReviews();
+            
+            // Log to console for debugging (remove in production)
+            console.log('User review saved:', reviewEntry);
             
             return reviewEntry;
         }
@@ -1880,11 +1992,12 @@
             recentReviews.forEach(review => {
                 const branchNames = {
                     'cse': 'CSE',
+                    'aids': 'AIDS',
+                    'it': 'IT',
+                    'aiml': 'AIML',
                     'entc': 'ENTC',
                     'mech': 'MECH',
-                    'aiml': 'AIML',
-                    'electrical': 'ELECT',
-                    'it': 'IT'
+                    'electrical': 'ELECT'
                 };
                 
                 // Get initials for avatar
@@ -1935,14 +2048,14 @@
             // Calculate today's tests
             const today = new Date().toDateString();
             const todayTests = engineeringLoveData.filter(entry => {
-                const entryDate = new Date(entry.id).toDateString();
+                const entryDate = new Date(entry.timestamp).toDateString();
                 return entryDate === today;
             }).length;
             document.getElementById('todayTests').textContent = todayTests;
             
-            // Calculate inter-branch matches
-            const interBranch = engineeringLoveData.filter(entry => entry.userBranch !== entry.crushBranch).length;
-            document.getElementById('interBranch').textContent = interBranch;
+            // Calculate unique users
+            const uniqueUsers = [...new Set(engineeringLoveData.map(entry => entry.userName))].length;
+            document.getElementById('totalUsers').textContent = uniqueUsers;
             
             // Calculate review stats
             document.getElementById('totalReviews').textContent = engineeringReviews.length;
@@ -1957,28 +2070,27 @@
             const tableBody = document.getElementById('dataTableBody');
             tableBody.innerHTML = '';
             
-            // Show latest 10 entries
-            const recentData = engineeringLoveData.slice(0, 10);
-            
-            recentData.forEach(entry => {
+            // Show ALL entries (not limited)
+            engineeringLoveData.forEach(entry => {
                 const branchNames = {
                     'cse': 'CSE',
+                    'aids': 'AIDS',
+                    'it': 'IT',
+                    'aiml': 'AIML',
                     'entc': 'ENTC',
                     'mech': 'MECH',
-                    'aiml': 'AIML',
-                    'electrical': 'ELECT',
-                    'it': 'IT'
+                    'electrical': 'ELECT'
                 };
                 
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${entry.id.toString().slice(-4)}</td>
-                    <td>${entry.userName}</td>
+                    <td>${entry.id.substring(0, 8)}...</td>
+                    <td><strong>${entry.userName}</strong></td>
                     <td>${branchNames[entry.userBranch] || entry.userBranch}</td>
-                    <td>${entry.crushName}</td>
+                    <td><strong>${entry.crushName}</strong></td>
                     <td>${branchNames[entry.crushBranch] || entry.crushBranch}</td>
-                    <td><strong>${entry.score}%</strong></td>
-                    <td>${new Date(entry.id).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</td>
+                    <td><strong style="color: #ff4d6d;">${entry.score}%</strong></td>
+                    <td>${entry.timestamp}</td>
                 `;
                 tableBody.appendChild(row);
             });
@@ -1987,27 +2099,26 @@
             const reviewsTableBody = document.getElementById('reviewsTableBody');
             reviewsTableBody.innerHTML = '';
             
-            // Show latest 10 reviews
-            const recentReviews = engineeringReviews.slice(0, 10);
-            
-            recentReviews.forEach(review => {
+            // Show ALL reviews (not limited)
+            engineeringReviews.forEach(review => {
                 const branchNames = {
                     'cse': 'CSE',
+                    'aids': 'AIDS',
+                    'it': 'IT',
+                    'aiml': 'AIML',
                     'entc': 'ENTC',
                     'mech': 'MECH',
-                    'aiml': 'AIML',
-                    'electrical': 'ELECT',
-                    'it': 'IT'
+                    'electrical': 'ELECT'
                 };
                 
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${review.id.toString().slice(-4)}</td>
-                    <td>${review.reviewerName}</td>
+                    <td>${review.id.substring(0, 8)}...</td>
+                    <td><strong>${review.reviewerName}</strong></td>
                     <td>${branchNames[review.reviewerBranch] || review.reviewerBranch}</td>
                     <td>${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}</td>
                     <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${review.reviewText}">${review.reviewText}</td>
-                    <td>${new Date(review.id).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</td>
+                    <td>${review.timestamp}</td>
                 `;
                 reviewsTableBody.appendChild(row);
             });
@@ -2015,58 +2126,115 @@
 
         // Initialize admin panel
         function initAdminPanel() {
-            updateAdminPanel();
-            
-            // Toggle admin panel visibility
+            // Toggle admin panel visibility - show login modal first
             document.getElementById('adminToggle').addEventListener('click', function() {
-                adminPanelVisible = !adminPanelVisible;
-                document.getElementById('adminPanel').classList.toggle('show', adminPanelVisible);
-                
-                // Change icon
-                const icon = this.querySelector('i');
-                if (adminPanelVisible) {
-                    icon.className = 'fas fa-eye-slash';
+                if (!adminLoggedIn) {
+                    // Show login modal
+                    document.getElementById('adminLoginModal').classList.add('show');
                 } else {
-                    icon.className = 'fas fa-eye';
+                    // Toggle admin panel
+                    const adminPanel = document.getElementById('adminPanel');
+                    const isVisible = adminPanel.classList.contains('show');
+                    
+                    if (isVisible) {
+                        adminPanel.classList.remove('show');
+                        this.querySelector('i').className = 'fas fa-user-shield';
+                    } else {
+                        adminPanel.classList.add('show');
+                        this.querySelector('i').className = 'fas fa-eye-slash';
+                        updateAdminPanel();
+                    }
+                }
+            });
+            
+            // Close login modal
+            document.getElementById('closeLogin').addEventListener('click', function() {
+                document.getElementById('adminLoginModal').classList.remove('show');
+                document.getElementById('loginError').classList.remove('show');
+                document.getElementById('adminLoginForm').reset();
+            });
+            
+            // Admin login form submission
+            document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const username = document.getElementById('adminUsername').value.trim();
+                const password = document.getElementById('adminPassword').value.trim();
+                
+                // Validate credentials
+                if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+                    adminLoggedIn = true;
+                    
+                    // Hide login modal
+                    document.getElementById('adminLoginModal').classList.remove('show');
+                    document.getElementById('loginError').classList.remove('show');
+                    this.reset();
+                    
+                    // Show admin panel
+                    document.getElementById('adminPanel').classList.add('show');
+                    document.getElementById('adminToggle').querySelector('i').className = 'fas fa-eye-slash';
+                    
+                    // Update admin panel with data
+                    updateAdminPanel();
+                    
+                    // Show success message
+                    alert('Admin login successful!');
+                } else {
+                    // Show error
+                    document.getElementById('loginError').classList.add('show');
                 }
             });
             
             // Close admin panel
             document.getElementById('closeAdmin').addEventListener('click', function() {
-                adminPanelVisible = false;
                 document.getElementById('adminPanel').classList.remove('show');
-                document.getElementById('adminToggle').querySelector('i').className = 'fas fa-eye';
+                document.getElementById('adminToggle').querySelector('i').className = 'fas fa-user-shield';
+            });
+            
+            // Logout admin
+            document.getElementById('logoutAdmin').addEventListener('click', function() {
+                adminLoggedIn = false;
+                document.getElementById('adminPanel').classList.remove('show');
+                document.getElementById('adminToggle').querySelector('i').className = 'fas fa-user-shield';
+                alert('Admin logged out successfully.');
             });
             
             // Export data
             document.getElementById('exportData').addEventListener('click', function() {
                 const data = {
                     loveTests: engineeringLoveData,
-                    reviews: engineeringReviews
+                    reviews: engineeringReviews,
+                    exportDate: new Date().toISOString(),
+                    totalTests: engineeringLoveData.length,
+                    totalReviews: engineeringReviews.length,
+                    platform: 'SBJIT Valentine 2026',
+                    version: '1.0'
                 };
                 
                 const dataStr = JSON.stringify(data, null, 2);
                 const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-                const exportFileDefaultName = 'sbjit_engineering_valentine2026.json';
+                const exportFileDefaultName = `sbjit_valentine_data_${new Date().getTime()}.json`;
                 
                 const linkElement = document.createElement('a');
                 linkElement.setAttribute('href', dataUri);
                 linkElement.setAttribute('download', exportFileDefaultName);
                 linkElement.click();
                 
-                alert('SBJIT engineering data exported successfully!');
+                alert('All data exported successfully!');
             });
             
-            // Clear data
+            // Clear all data
             document.getElementById('clearData').addEventListener('click', function() {
-                if (confirm('Are you sure you want to clear all SBJIT engineering data? This action cannot be undone.')) {
+                if (confirm('Are you sure you want to clear ALL data? This action cannot be undone!')) {
                     engineeringLoveData = [];
                     engineeringReviews = [];
                     localStorage.removeItem('sbjitEngineeringLove2026');
                     localStorage.removeItem('sbjitEngineeringReviews2026');
+                    
                     updateAdminPanel();
                     displayReviews();
-                    alert('All engineering campus data has been cleared.');
+                    
+                    alert('All data has been cleared successfully!');
                 }
             });
         }
@@ -2151,7 +2319,7 @@
                 });
                 
                 // Show success message
-                alert('Thank you for your review!');
+                alert('Thank you for your review! Your feedback has been recorded.');
                 
                 // Scroll to reviews
                 document.getElementById('reviewsList').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -2200,6 +2368,9 @@
                 setTimeout(() => {
                     resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 500);
+                
+                // Show success message
+                alert('Your compatibility test has been recorded!');
             });
             
             // Share buttons
@@ -2217,21 +2388,11 @@
                 alert('Take a screenshot and share on Instagram with #SBJITValentine!');
             });
             
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetSection = document.querySelector(targetId);
-                    if (targetSection) {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+            // Auto-save form data as user types (optional)
+            document.querySelectorAll('#calculator input, #calculator select').forEach(element => {
+                element.addEventListener('change', function() {
+                    // This could be extended to save partial form data
+                    console.log('Form field changed:', this.id, this.value);
                 });
             });
             
@@ -2240,17 +2401,20 @@
                 // Add some sample SBJIT engineering data for demo purposes
                 const sampleData = [
                     { userName: 'Rahul Sharma', userBranch: 'cse', crushName: 'Priya Patel', crushBranch: 'it', year: 'second', lab: 'computer', score: 92 },
-                    { userName: 'Anjali Deshmukh', userBranch: 'entc', crushName: 'Rohan Singh', crushBranch: 'mech', year: 'third', lab: 'electronics', score: 85 },
-                    { userName: 'Vikram Joshi', userBranch: 'aiml', crushName: 'Neha Gupta', crushBranch: 'aiml', year: 'first', lab: 'library', score: 96 },
+                    { userName: 'Anjali Deshmukh', userBranch: 'aids', crushName: 'Rohan Singh', crushBranch: 'aiml', year: 'third', lab: 'electronics', score: 88 },
+                    { userName: 'Vikram Joshi', userBranch: 'it', crushName: 'Neha Gupta', crushBranch: 'cse', year: 'first', lab: 'library', score: 95 },
                     { userName: 'Sneha Reddy', userBranch: 'it', crushName: 'Arun Kumar', crushBranch: 'cse', year: 'second', lab: 'computer', score: 88 },
-                    { userName: 'Karan Malhotra', userBranch: 'mech', crushName: 'Pooja Verma', crushBranch: 'electrical', year: 'third', lab: 'workshop', score: 79 }
+                    { userName: 'Karan Malhotra', userBranch: 'aids', crushName: 'Pooja Verma', crushBranch: 'it', year: 'third', lab: 'workshop', score: 82 }
                 ];
                 
                 sampleData.forEach((data, index) => {
                     const entry = {
-                        id: Date.now() - (index * 86400000), // Spread over days
+                        id: 'DEMO_' + Date.now() + index,
                         ...data,
-                        timestamp: new Date(Date.now() - (index * 86400000)).toLocaleString()
+                        timestamp: new Date(Date.now() - (index * 86400000)).toLocaleString(),
+                        date: new Date(Date.now() - (index * 86400000)).toLocaleDateString(),
+                        browserInfo: { userAgent: 'Demo Data', platform: 'Demo' },
+                        entryType: 'demo_love_test'
                     };
                     engineeringLoveData.push(entry);
                 });
@@ -2264,16 +2428,18 @@
                 const sampleReviews = [
                     { reviewerName: 'Aditya Kumar', reviewerBranch: 'cse', rating: 5, reviewText: 'This platform is amazing! Met my crush through the compatibility test and we\'re dating now!' },
                     { reviewerName: 'Neha Sharma', reviewerBranch: 'aiml', rating: 4, reviewText: 'Fun way to connect with fellow engineering students. The love stories section is inspiring!' },
-                    { reviewerName: 'Rohit Verma', reviewerBranch: 'mech', rating: 5, reviewText: 'Finally a Valentine\'s platform made specifically for SBJIT engineers. Loved it!' },
-                    { reviewerName: 'Priya Desai', reviewerBranch: 'entc', rating: 4, reviewText: 'The Nagpur date spots suggestions are very helpful for engineering students on a budget.' }
+                    { reviewerName: 'Rohit Verma', reviewerBranch: 'aids', rating: 5, reviewText: 'Finally a Valentine\'s platform made specifically for SBJIT engineers. Loved it!' },
+                    { reviewerName: 'Priya Desai', reviewerBranch: 'it', rating: 4, reviewText: 'The Nagpur date spots suggestions are very helpful for engineering students on a budget.' }
                 ];
                 
                 sampleReviews.forEach((review, index) => {
                     const entry = {
-                        id: Date.now() - (index * 86400000 * 2), // Spread over days
+                        id: 'DEMO_REVIEW_' + Date.now() + index,
                         ...review,
                         timestamp: new Date(Date.now() - (index * 86400000 * 2)).toLocaleString(),
-                        date: new Date(Date.now() - (index * 86400000 * 2)).toLocaleDateString()
+                        date: new Date(Date.now() - (index * 86400000 * 2)).toLocaleDateString(),
+                        browserInfo: { userAgent: 'Demo Data', platform: 'Demo' },
+                        entryType: 'demo_review'
                     };
                     engineeringReviews.push(entry);
                 });
@@ -2281,9 +2447,13 @@
                 localStorage.setItem('sbjitEngineeringReviews2026', JSON.stringify(engineeringReviews));
             }
             
-            // Update admin panel and display reviews
-            updateAdminPanel();
+            // Display reviews
             displayReviews();
+            
+            // Log initial page load
+            console.log('SBJIT Valentine Platform Loaded');
+            console.log('Total Love Tests:', engineeringLoveData.length);
+            console.log('Total Reviews:', engineeringReviews.length);
         });
     </script>
 </body>
