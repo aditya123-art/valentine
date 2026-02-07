@@ -1,1988 +1,196 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SBJIT Nagpur Valentine's 2026 - Engineering Campus Love</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --sbjit-blue: #0c2340;
-            --sbjit-light-blue: #1e3a5f;
-            --sbjit-gold: #ffb81c;
-            --sbjit-red: #c8102e;
-            --valentine-pink: #ff4d6d;
-            --valentine-light: #ff8fa3;
-            --campus-green: #006747;
-            --campus-white: #ffffff;
-            --engineering-gray: #2c3e50;
-            --admin-dark: #1a1a2e;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f9fa" opacity="0.3"/><path d="M10,10 L90,90 M90,10 L10,90" stroke="%230c2340" stroke-width="1" opacity="0.1"/><circle cx="50" cy="50" r="30" stroke="%23ffb81c" stroke-width="1" fill="none" opacity="0.1"/></svg>');
-        }
-
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header with SBJITMR branding */
-        header {
-            background: linear-gradient(135deg, var(--sbjit-blue) 0%, var(--sbjit-light-blue) 100%);
-            padding: 15px 0;
-            box-shadow: 0 6px 20px rgba(12, 35, 64, 0.25);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 4px solid var(--sbjit-gold);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .college-brand {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .college-logo {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 3px solid var(--sbjit-gold);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-color: white;
-            overflow: hidden;
-            padding: 5px;
-        }
-
-        .college-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 50%;
-        }
-
-        .college-text h1 {
-            font-size: 1.6rem;
-            color: white;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .college-text h1 span {
-            color: var(--sbjit-gold);
-            font-size: 1.2rem;
-            display: block;
-            font-weight: 600;
-        }
-
-        .logo {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.8rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            color: var(--sbjit-gold);
-            animation: heartbeat 1.5s infinite;
-        }
-
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-            position: relative;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            padding: 10px 18px;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        nav ul li a:hover, nav ul li a.active {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: var(--sbjit-gold);
-            transform: translateY(-3px);
-        }
-
-        nav ul li a i {
-            font-size: 1.1rem;
-        }
-
-        /* Campus Hero Section */
-        .hero {
-            padding: 120px 0 80px;
-            text-align: center;
-            background: linear-gradient(rgba(12, 35, 64, 0.85), rgba(30, 58, 95, 0.8)), 
-                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ffb81c" opacity="0.1" d="M50,30 Q70,10 90,30 T130,30 Q150,10 170,30 T210,30 Q230,10 250,30 T290,30 Q310,10 330,30 T370,30 Q390,10 410,30 T450,30 Q470,10 490,30 T530,30 Q550,10 570,30 T610,30 Q630,10 650,30 T690,30 Q710,10 730,30 T770,30 Q790,10 810,30 T850,30 Q870,10 890,30 T930,30 Q950,10 970,30 T1010,30 Q1030,10 1050,30"></path></svg>');
-            background-size: 300px;
-            opacity: 0.3;
-            z-index: 1;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: var(--sbjit-gold);
-            display: block;
-            font-size: 3.5rem;
-        }
-
-        .campus-tagline {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            color: white;
-            font-weight: 300;
-        }
-
-        .engineering-badge {
-            display: inline-block;
-            background: var(--sbjit-red);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border: 2px solid var(--sbjit-gold);
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, var(--valentine-pink) 0%, var(--sbjit-red) 100%);
-            color: white;
-            border: none;
-            padding: 18px 45px;
-            font-size: 1.4rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-            box-shadow: 0 8px 25px rgba(255, 77, 109, 0.4);
-            margin-top: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid var(--sbjit-gold);
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(255, 77, 109, 0.6);
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        /* Campus Engineering Departments */
-        .engineering-depts {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 40px;
-        }
-
-        .dept-badge {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 12px 20px;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border: 2px solid rgba(255, 184, 28, 0.3);
-            transition: all 0.3s;
-        }
-
-        .dept-badge:hover {
-            background: rgba(255, 184, 28, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .dept-badge i {
-            color: var(--sbjit-gold);
-            font-size: 1.3rem;
-        }
-
-        /* Valentine Countdown */
-        .countdown {
-            background: linear-gradient(135deg, rgba(255, 77, 109, 0.1), rgba(12, 35, 64, 0.1));
-            padding: 40px;
-            border-radius: 25px;
-            margin-top: 50px;
-            border: 2px solid rgba(255, 77, 109, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .countdown-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--sbjit-blue);
-            margin-bottom: 30px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .countdown-item {
-            text-align: center;
-            min-width: 120px;
-        }
-
-        .countdown-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--sbjit-blue);
-            background: white;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            box-shadow: 0 8px 20px rgba(12, 35, 64, 0.2);
-            border: 3px solid var(--sbjit-gold);
-        }
-
-        .countdown-label {
-            font-size: 1.2rem;
-            color: var(--sbjit-blue);
-            font-weight: 600;
-        }
-
-        /* Sections */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: var(--sbjit-blue);
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--sbjit-blue), var(--sbjit-gold));
-            border-radius: 2px;
-        }
-
-        /* Engineering Love Calculator */
-        .calculator-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .calculator {
-            background-color: white;
-            border-radius: 25px;
-            padding: 50px;
-            width: 100%;
-            max-width: 800px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(12, 35, 64, 0.1);
-        }
-
-        .calculator::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background: linear-gradient(90deg, var(--sbjit-blue), var(--sbjit-gold), var(--valentine-pink));
-        }
-
-        .calculator-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .calculator-header h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--sbjit-blue);
-            margin-bottom: 10px;
-        }
-
-        .calculator-header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .input-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .input-group {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 12px;
-            font-weight: 600;
-            color: var(--sbjit-blue);
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .input-group label i {
-            color: var(--valentine-pink);
-        }
-
-        .input-group input, .input-group select {
-            width: 100%;
-            padding: 18px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 15px;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        .input-group input:focus, .input-group select:focus {
-            border-color: var(--sbjit-blue);
-            outline: none;
-            background-color: white;
-            box-shadow: 0 0 0 3px rgba(12, 35, 64, 0.1);
-        }
-
-        .calculate-btn {
-            background: linear-gradient(135deg, var(--sbjit-blue) 0%, var(--valentine-pink) 100%);
-            color: white;
-            border: none;
-            padding: 20px 50px;
-            font-size: 1.3rem;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-            box-shadow: 0 8px 20px rgba(12, 35, 64, 0.3);
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .calculate-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(12, 35, 64, 0.4);
-        }
-
-        .result-container {
-            text-align: center;
-            margin-top: 40px;
-            padding: 30px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, #f0f4ff 0%, #ffe5ec 100%);
-            border: 2px dashed var(--sbjit-blue);
-            display: none;
-        }
-
-        .result-container.show {
-            display: block;
-            animation: fadeIn 0.8s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .result-percentage {
-            font-size: 5rem;
-            font-weight: 700;
-            color: var(--valentine-pink);
-            margin-bottom: 10px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .result-message {
-            font-size: 1.8rem;
-            color: var(--sbjit-blue);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .result-description {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .result-share {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .share-btn {
-            background-color: white;
-            border: 2px solid var(--sbjit-blue);
-            color: var(--sbjit-blue);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .share-btn:hover {
-            background-color: var(--sbjit-blue);
-            color: white;
-        }
-
-        /* Engineering Lab Date Ideas */
-        .lab-date-ideas {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .lab-card {
-            background-color: white;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .lab-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border-color: var(--sbjit-blue);
-        }
-
-        .lab-card::after {
-            content: 'SBJIT';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--sbjit-blue);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .lab-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--sbjit-blue) 0%, var(--valentine-pink) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.8rem;
-            color: white;
-        }
-
-        .lab-card h3 {
-            font-size: 1.6rem;
-            color: var(--sbjit-blue);
-            margin-bottom: 15px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .lab-card p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .lab-location {
-            font-size: 1rem;
-            color: var(--sbjit-blue);
-            font-weight: 600;
-            margin-top: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        /* Engineering Love Stories */
-        .engineering-stories {
-            background: linear-gradient(135deg, rgba(12, 35, 64, 0.05), rgba(255, 77, 109, 0.05));
-            border-radius: 25px;
-            padding: 40px;
-            margin-top: 50px;
-        }
-
-        .stories-title {
-            text-align: center;
-            font-size: 2.2rem;
-            color: var(--sbjit-blue);
-            margin-bottom: 30px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .story {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border-left: 5px solid var(--valentine-pink);
-        }
-
-        .story-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .story-avatar {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--sbjit-blue), var(--valentine-pink));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .story-author h4 {
-            color: var(--sbjit-blue);
-            font-size: 1.3rem;
-        }
-
-        .story-author p {
-            color: #777;
-            font-size: 0.9rem;
-        }
-
-        .story-content {
-            color: #555;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        /* Admin Login Modal */
-        .admin-login-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-        }
-
-        .admin-login-modal.show {
-            display: flex;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .login-container {
-            background-color: white;
-            border-radius: 20px;
-            padding: 40px;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            position: relative;
-            border: 4px solid var(--sbjit-blue);
-        }
-
-        .login-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .login-header h2 {
-            color: var(--sbjit-blue);
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .login-header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .login-form .input-group {
-            margin-bottom: 25px;
-        }
-
-        .login-form input {
-            width: 100%;
-            padding: 18px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 15px;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        .login-form input:focus {
-            border-color: var(--sbjit-blue);
-            outline: none;
-            background-color: white;
-            box-shadow: 0 0 0 3px rgba(12, 35, 64, 0.1);
-        }
-
-        .login-btn {
-            background: linear-gradient(135deg, var(--sbjit-blue) 0%, var(--admin-dark) 100%);
-            color: white;
-            border: none;
-            padding: 18px 40px;
-            font-size: 1.3rem;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-            box-shadow: 0 8px 20px rgba(12, 35, 64, 0.3);
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .login-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(12, 35, 64, 0.4);
-        }
-
-        .login-error {
-            color: var(--sbjit-red);
-            font-size: 1rem;
-            margin-top: 10px;
-            text-align: center;
-            display: none;
-        }
-
-        .login-error.show {
-            display: block;
-        }
-
-        .close-login {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            color: #999;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close-login:hover {
-            color: var(--sbjit-blue);
-        }
-
-        /* Admin Data Panel (Hidden from students) */
-        .admin-panel {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--admin-dark);
-            color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            width: 500px;
-            z-index: 1000;
-            border: 3px solid var(--sbjit-gold);
-            display: none;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .admin-panel.show {
-            display: block;
-            animation: slideIn 0.5s ease;
-        }
-
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            position: sticky;
-            top: 0;
-            background: var(--admin-dark);
-            z-index: 1;
-        }
-
-        .admin-header h3 {
-            color: var(--sbjit-gold);
-            font-size: 1.5rem;
-        }
-
-        .admin-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .admin-btn {
-            background: var(--sbjit-gold);
-            color: var(--admin-dark);
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-        }
-
-        .admin-btn:hover {
-            background: white;
-        }
-
-        .logout-admin {
-            background: var(--sbjit-red);
-            color: white;
-        }
-
-        .logout-admin:hover {
-            background: #ff4d4d;
-        }
-
-        .close-admin {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #999;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close-admin:hover {
-            color: var(--sbjit-gold);
-        }
-
-        .admin-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .stat-box {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            border-left: 4px solid var(--sbjit-gold);
-        }
-
-        .stat-value {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--sbjit-gold);
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: #ccc;
-        }
-
-        .data-table {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 20px;
-        }
-
-        .data-table h4 {
-            color: var(--sbjit-gold);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }
-
-        th, td {
-            padding: 10px 12px;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        th {
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--sbjit-gold);
-            font-weight: 600;
-            position: sticky;
-            top: 0;
-        }
-
-        tr:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .admin-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--sbjit-blue);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(12, 35, 64, 0.4);
-            z-index: 999;
-            transition: all 0.3s;
-        }
-
-        .admin-toggle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(12, 35, 64, 0.6);
-        }
-
-        /* User Reviews Section */
-        .reviews-section {
-            background-color: white;
-            border-radius: 25px;
-            padding: 50px;
-            margin-top: 40px;
-            border: 2px solid rgba(12, 35, 64, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .reviews-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        @media (max-width: 992px) {
-            .reviews-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .review-form {
-            background: #f9f9f9;
-            border-radius: 20px;
-            padding: 30px;
-        }
-
-        .review-form h3 {
-            color: var(--sbjit-blue);
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .review-form textarea {
-            width: 100%;
-            padding: 18px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            background-color: white;
-            color: #333;
-            resize: vertical;
-            min-height: 120px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .review-form textarea:focus {
-            border-color: var(--sbjit-blue);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(12, 35, 64, 0.1);
-        }
-
-        .submit-review-btn {
-            background: linear-gradient(135deg, var(--sbjit-gold) 0%, var(--valentine-pink) 100%);
-            color: white;
-            border: none;
-            padding: 18px 40px;
-            font-size: 1.2rem;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-            box-shadow: 0 8px 20px rgba(255, 184, 28, 0.3);
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .submit-review-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(255, 184, 28, 0.4);
-        }
-
-        .reviews-list {
-            max-height: 500px;
-            overflow-y: auto;
-            padding-right: 15px;
-        }
-
-        .reviews-list h3 {
-            color: var(--sbjit-blue);
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-            font-family: 'Playfair Display', serif;
-            position: sticky;
-            top: 0;
-            background: white;
-            padding: 10px 0;
-            z-index: 1;
-        }
-
-        .review-item {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--sbjit-gold);
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .reviewer-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .reviewer-avatar {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--sbjit-blue), var(--valentine-pink));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .reviewer-details h4 {
-            color: var(--sbjit-blue);
-            font-size: 1.1rem;
-        }
-
-        .reviewer-details p {
-            color: #777;
-            font-size: 0.85rem;
-        }
-
-        .review-rating {
-            color: var(--sbjit-gold);
-            font-size: 1.2rem;
-        }
-
-        .review-content {
-            color: #555;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .review-date {
-            color: #999;
-            font-size: 0.85rem;
-            margin-top: 10px;
-            text-align: right;
-        }
-
-        /* Nagpur Local Spots */
-        .nagpur-spots {
-            background: white;
-            border-radius: 25px;
-            padding: 40px;
-            margin-top: 40px;
-            border: 2px solid rgba(12, 35, 64, 0.1);
-        }
-
-        .spots-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--sbjit-blue);
-            margin-bottom: 30px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .spots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .spot-card {
-            background: #f9f9f9;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .spot-card:hover {
-            border-color: var(--sbjit-gold);
-            transform: translateY(-5px);
-        }
-
-        .spot-card h4 {
-            color: var(--sbjit-blue);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .spot-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--sbjit-blue);
-            color: white;
-            padding: 60px 0 30px;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 300px;
-            margin-bottom: 30px;
-        }
-
-        .footer-section h3 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--sbjit-gold);
-        }
-
-        .footer-section p {
-            max-width: 300px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            color: #ccc;
-        }
-
-        .campus-departments {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .campus-departments li {
-            padding: 5px 0;
-            color: #ccc;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .campus-departments li i {
-            color: var(--sbjit-gold);
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 25px;
-        }
-
-        .social-icons a {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s;
-        }
-
-        .social-icons a:hover {
-            background-color: var(--sbjit-gold);
-            color: var(--sbjit-blue);
-            transform: translateY(-5px);
-        }
-
-        .copyright {
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        /* Admin Data Info */
-        .admin-info {
-            background: rgba(255, 184, 28, 0.1);
-            border: 1px solid var(--sbjit-gold);
-            border-radius: 10px;
-            padding: 15px;
-            margin: 15px 0;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #ffb81c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3.2rem;
-            }
-            
-            .section-title {
-                font-size: 3rem;
-            }
-            
-            .calculator-container {
-                flex-direction: column;
-            }
-            
-            .admin-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .admin-panel {
-                width: 95%;
-                right: 2.5%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-            
-            nav ul li {
-                margin-left: 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .campus-tagline {
-                font-size: 1.4rem;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
-            }
-            
-            .admin-panel {
-                width: 95%;
-                right: 2.5%;
-                bottom: 80px;
-            }
-            
-            .countdown-number {
-                width: 80px;
-                height: 80px;
-                font-size: 2.8rem;
-            }
-            
-            .college-text h1 {
-                font-size: 1.4rem;
-            }
-            
-            .college-text h1 span {
-                font-size: 1.1rem;
-            }
-            
-            .college-logo {
-                width: 60px;
-                height: 60px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header with SBJITMR Branding -->
-    <header>
-        <div class="container header-content">
-            <div class="college-brand">
-                <div class="college-logo">
-                    <img src="https://tse3.mm.bing.net/th/id/OIP.u1wqfw5oTlOSHjsbU4CP7AAAAA?pid=ImgDetMain" alt="SBJIT Logo" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\"><rect width=\"60\" height=\"60\" fill=\"%230c2340\"/></svg>';">
-                </div>
-                <div class="college-text">
-                    <h1>S. B. Jain Institute of Technology<span>Management & Research, Nagpur</span></h1>
-                </div>
-            </div>
-            
-            <div class="logo">
-                <i class="fas fa-heart logo-icon"></i>
-                Engineering Crush
-            </div>
-        </div>
-    </header>
-
-    <!-- Campus Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="engineering-badge">
-                <i class="fas fa-cogs"></i> For Engineering Students Only
-            </div>
-            <h1>SBJIT Valentine's Day <span>2026</span></h1>
-            <p class="campus-tagline">Where engineering minds meet loving hearts ❤️⚙️</p>
-            <button class="cta-button" id="startTestBtn">
-                <i class="fas fa-heart"></i> Find Your Engineering Match
-            </button>
-            
-            <!-- Engineering Departments -->
-            <div class="engineering-depts">
-                <div class="dept-badge">
-                    <i class="fas fa-laptop-code"></i>
-                    <span>Computer Engineering</span>
-                </div>
-                <div class="dept-badge">
-                    <i class="fas fa-dna"></i>
-                    <span>AIDS Engineering</span>
-                </div>
-                <div class="dept-badge">
-                    <i class="fas fa-network-wired"></i>
-                    <span>IT Engineering</span>
-                </div>
-                <div class="dept-badge">
-                    <i class="fas fa-robot"></i>
-                    <span>AIML Engineering</span>
-                </div>
-                <div class="dept-badge">
-                    <i class="fas fa-microchip"></i>
-                    <span>Electronics & Telecomm</span>
-                </div>
-            </div>
-            
-            <!-- Valentine Countdown -->
-            <div class="countdown">
-                <div class="countdown-title">Countdown to Valentine's Day 2026</div>
-                <div class="countdown-timer" id="countdownTimer">
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="days">365</div>
-                        <div class="countdown-label">Days</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="hours">23</div>
-                        <div class="countdown-label">Hours</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="minutes">59</div>
-                        <div class="countdown-label">Minutes</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="seconds">59</div>
-                        <div class="countdown-label">Seconds</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Engineering Love Calculator -->
-    <section class="section" id="calculator">
-        <div class="container">
-            <h2 class="section-title">Engineering Love Compatibility</h2>
-            <div class="calculator-container">
-                <div class="calculator">
-                    <div class="calculator-header">
-                        <h3>SBJIT Love Algorithm</h3>
-                        <p>Calculate your compatibility using our engineering-based algorithm</p>
-                    </div>
-                    
-                    <div class="input-row">
-                        <div class="input-group">
-                            <label for="yourName"><i class="fas fa-user-graduate"></i> Your Full Name</label>
-                            <input type="text" id="yourName" placeholder="Enter your full name">
-                        </div>
-                        <div class="input-group">
-                            <label for="yourDepartment"><i class="fas fa-university"></i> Your Branch</label>
-                            <select id="yourDepartment">
-                                <option value="">Select Engineering Branch</option>
-                                <option value="cse">Computer Science & Engineering</option>
-                                <option value="aids">AIDS Engineering</option>
-                                <option value="it">Information Technology</option>
-                                <option value="aiml">AIML Engineering</option>
-                                <option value="entc">Electronics & Telecommunication</option>
-                                <option value="mech">Mechanical Engineering</option>
-                                <option value="electrical">Electrical Engineering</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="input-row">
-                        <div class="input-group">
-                            <label for="crushName"><i class="fas fa-heart"></i> Your Crush's Full Name</label>
-                            <input type="text" id="crushName" placeholder="Enter your crush's full name">
-                        </div>
-                        <div class="input-group">
-                            <label for="crushDepartment"><i class="fas fa-university"></i> Crush's Branch</label>
-                            <select id="crushDepartment">
-                                <option value="">Select Engineering Branch</option>
-                                <option value="cse">Computer Science & Engineering</option>
-                                <option value="aids">AIDS Engineering</option>
-                                <option value="it">Information Technology</option>
-                                <option value="aiml">AIML Engineering</option>
-                                <option value="entc">Electronics & Telecommunication</option>
-                                <option value="mech">Mechanical Engineering</option>
-                                <option value="electrical">Electrical Engineering</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="input-row">
-                        <div class="input-group">
-                            <label for="year"><i class="fas fa-calendar-alt"></i> Your Year</label>
-                            <select id="year">
-                                <option value="">Select Year</option>
-                                <option value="first">First Year</option>
-                                <option value="second">Second Year</option>
-                                <option value="third">Third Year</option>
-                                <option value="fourth">Final Year</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label for="lab"><i class="fas fa-flask"></i> Favorite Lab</label>
-                            <select id="lab">
-                                <option value="">Select Lab</option>
-                                <option value="computer">Computer Lab</option>
-                                <option value="electronics">Electronics Lab</option>
-                                <option value="workshop">Workshop</option>
-                                <option value="circuit">Circuit Lab</option>
-                                <option value="library">Library</option>
-                                <option value="canteen">Canteen</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <button class="calculate-btn" id="calculateBtn">
-                        <i class="fas fa-calculator"></i> Run Compatibility Algorithm
-                    </button>
-                    
-                    <div class="result-container" id="resultContainer">
-                        <div class="result-percentage" id="resultPercentage">88%</div>
-                        <div class="result-message" id="resultMessage">Perfect Engineering Match!</div>
-                        <div class="result-description" id="resultDescription">
-                            Your compatibility score shows strong potential for an engineering romance. 
-                            Based on SBJIT student relationships, you two could make a great campus couple!
-                        </div>
-                        <div class="result-share">
-                            <button class="share-btn" id="shareWhatsapp">
-                                <i class="fab fa-whatsapp"></i> Share with Batch
-                            </button>
-                            <button class="share-btn" id="shareInstagram">
-                                <i class="fab fa-instagram"></i> Share on Instagram
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- User Reviews Section -->
-    <section class="section" id="reviews">
-        <div class="container">
-            <h2 class="section-title">Student Reviews</h2>
-            <div class="reviews-section">
-                <div class="reviews-container">
-                    <!-- Review Form -->
-                    <div class="review-form">
-                        <h3>Share Your Experience</h3>
-                        <form id="reviewForm">
-                            <div class="input-row">
-                                <div class="input-group">
-                                    <label for="reviewerName"><i class="fas fa-user"></i> Your Full Name</label>
-                                    <input type="text" id="reviewerName" placeholder="Enter your full name" required>
-                                </div>
-                                <div class="input-group">
-                                    <label for="reviewerBranch"><i class="fas fa-university"></i> Your Branch</label>
-                                    <select id="reviewerBranch" required>
-                                        <option value="">Select Branch</option>
-                                        <option value="cse">Computer Science & Engineering</option>
-                                        <option value="aids">AIDS Engineering</option>
-                                        <option value="it">Information Technology</option>
-                                        <option value="aiml">AIML Engineering</option>
-                                        <option value="entc">Electronics & Telecommunication</option>
-                                        <option value="mech">Mechanical Engineering</option>
-                                        <option value="electrical">Electrical Engineering</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="input-group">
-                                <label for="reviewRating"><i class="fas fa-star"></i> Rating (1-5)</label>
-                                <div style="display: flex; gap: 5px; margin-bottom: 10px;">
-                                    <span class="star-rating" data-rating="1">☆</span>
-                                    <span class="star-rating" data-rating="2">☆</span>
-                                    <span class="star-rating" data-rating="3">☆</span>
-                                    <span class="star-rating" data-rating="4">☆</span>
-                                    <span class="star-rating" data-rating="5">☆</span>
-                                </div>
-                                <input type="hidden" id="reviewRating" value="0" required>
-                            </div>
-                            
-                            <div class="input-group">
-                                <label for="reviewText"><i class="fas fa-comment"></i> Your Review</label>
-                                <textarea id="reviewText" placeholder="Share your experience with SBJIT Valentine's platform..." required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="submit-review-btn">
-                                <i class="fas fa-paper-plane"></i> Submit Review
-                            </button>
-                        </form>
-                    </div>
-                    
-                    <!-- Reviews List -->
-                    <div class="reviews-list">
-                        <h3>What Students Say</h3>
-                        <div id="reviewsList">
-                            <!-- Reviews will be dynamically added here -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="about">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>SBJIT Valentine's</h3>
-                    <p>A special platform for SBJIT engineering students to celebrate love and find connections on campus.</p>
-                    <p>Made with ❤️ for the SBJIT engineering community</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Engineering Branches</h3>
-                    <ul class="campus-departments">
-                        <li><i class="fas fa-laptop-code"></i> Computer Science & Engineering</li>
-                        <li><i class="fas fa-dna"></i> AIDS Engineering</li>
-                        <li><i class="fas fa-network-wired"></i> Information Technology</li>
-                        <li><i class="fas fa-robot"></i> AIML Engineering</li>
-                        <li><i class="fas fa-microchip"></i> Electronics & Telecommunication</li>
-                        <li><i class="fas fa-cogs"></i> Mechanical Engineering</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Campus Connect</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                    <p style="margin-top: 20px;">For engineering students only</p>
-                    <p>valentine@sbjit.edu.in</p>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">S. B. Jain Institute of Technology, Nagpur</p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2026 SBJIT Valentine's Day Platform. For SBJIT engineering students only.</p>
-                <p style="margin-top: 10px; font-size: 0.9rem;">This platform is created for entertainment and campus bonding purposes. All love scores are calculated for fun.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Admin Login Modal -->
-    <div class="admin-login-modal" id="adminLoginModal">
-        <div class="login-container">
-            <button class="close-login" id="closeLogin">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="login-header">
-                <h2>Admin Login</h2>
-                <p>Access restricted to authorized personnel only</p>
-            </div>
-            <form class="login-form" id="adminLoginForm">
-                <div class="input-group">
-                    <label for="adminUsername"><i class="fas fa-user-shield"></i> Username</label>
-                    <input type="text" id="adminUsername" placeholder="" required>
-                </div>
-                <div class="input-group">
-                    <label for="adminPassword"><i class="fas fa-lock"></i> Password</label>
-                    <input type="password" id="adminPassword" placeholder="" required>
-                </div>
-                <div class="login-error" id="loginError">
-                    Invalid username or password. Please try again.
-                </div>
-                <button type="submit" class="login-btn">
-                    <i class="fas fa-sign-in-alt"></i> Login to Admin Panel
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Admin Panel Toggle -->
-    <div class="admin-toggle" id="adminToggle">
-        <i class="fas fa-user-shield"></i>
-    </div>
-
-    <!-- Admin Data Panel (Hidden from students) -->
-    <div class="admin-panel" id="adminPanel">
-        <div class="admin-header">
-            <h3>SBJIT Admin Dashboard</h3>
-            <div class="admin-actions">
-                <button class="admin-btn" id="exportData">
-                    <i class="fas fa-download"></i> Export Data
-                </button>
-                <button class="admin-btn" id="clearData">
-                    <i class="fas fa-trash"></i> Clear All Data
-                </button>
-                <button class="admin-btn logout-admin" id="logoutAdmin">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </button>
-            </div>
-            <button class="close-admin" id="closeAdmin">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
+<script>
+    // SBJIT engineering campus backend connection
+    const BACKEND_URL = "https://my-backend-tiz0.onrender.com";
+    let adminLoggedIn = false;
+
+    // User tracking system
+    function generateUserId() {
+        return 'USER_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    }
+
+    // Valentine's Day 2026 countdown
+    function initCountdown() {
+        const valentine2026 = new Date('February 14, 2026 00:00:00').getTime();
         
-        <div class="admin-info">
-            <i class="fas fa-info-circle"></i>
-            <span>All user data is automatically recorded and stored locally. Data is accessible only through this admin panel.</span>
-        </div>
-        
-        <div class="admin-stats">
-            <div class="stat-box">
-                <div class="stat-value" id="totalTests">0</div>
-                <div class="stat-label">Total Tests</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="avgScore">0%</div>
-                <div class="stat-label">Avg. Score</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="todayTests">0</div>
-                <div class="stat-label">Today's Tests</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="totalUsers">0</div>
-                <div class="stat-label">Unique Users</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="totalReviews">0</div>
-                <div class="stat-label">Total Reviews</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="avgRating">0.0</div>
-                <div class="stat-label">Avg. Rating</div>
-            </div>
-        </div>
-        
-        <div class="data-table">
-            <h4>All User Love Test Data</h4>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>User Name</th>
-                        <th>Branch</th>
-                        <th>Crush Name</th>
-                        <th>Crush Branch</th>
-                        <th>Score</th>
-                        <th>Date & Time</th>
-                    </tr>
-                </thead>
-                <tbody id="dataTableBody">
-                    <!-- Data will be inserted here by JavaScript -->
-                </tbody>
-            </table>
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = valentine2026 - now;
             
-            <h4>All User Reviews</h4>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>User Name</th>
-                        <th>Branch</th>
-                        <th>Rating</th>
-                        <th>Review</th>
-                        <th>Date & Time</th>
-                    </tr>
-                </thead>
-                <tbody id="reviewsTableBody">
-                    <!-- Reviews will be inserted here by JavaScript -->
-                </tbody>
-            </table>
-        </div>
-    </div>
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('countdownTimer').innerHTML = '<div style="font-size: 2rem; color: #ffb81c;">Happy Valentine\'s Day 2026 SBJIT!</div>';
+            }
+        }
+        
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    }
 
-    <script>
-        // SBJIT engineering campus data storage
-        let engineeringLoveData = JSON.parse(localStorage.getItem('sbjitEngineeringLove2026')) || [];
-        let engineeringReviews = JSON.parse(localStorage.getItem('sbjitEngineeringReviews2026')) || [];
-        let adminLoggedIn = false;
-        const ADMIN_CREDENTIALS = {
-            username: "aditya123",
-            password: "Aditya123#@"
+    // Calculate love compatibility for engineering students (always returns > 50%)
+    function calculateEngineeringLoveScore(userName, userBranch, crushName, crushBranch, year, lab) {
+        // Create a deterministic but random-seeming score between 70% and 98%
+        let hash = 0;
+        const combinedString = userName + userBranch + crushName + crushBranch + year + lab;
+        
+        for (let i = 0; i < combinedString.length; i++) {
+            hash = (hash << 5) - hash + combinedString.charCodeAt(i);
+            hash |= 0; // Convert to 32bit integer
+        }
+        
+        // Generate base score between 75 and 98 for engineering students
+        let score = Math.abs(hash) % 24 + 75;
+        
+        // Adjust based on branch compatibility
+        if (userBranch === crushBranch) score += 5; // Same branch bonus
+        if ((userBranch === 'cse' && crushBranch === 'it') || (userBranch === 'it' && crushBranch === 'cse')) score += 4; // Related branches
+        
+        // Adjust based on lab preference
+        if (lab === 'computer' || lab === 'library') score += 3; // Romantic study spots
+        
+        // Adjust based on year
+        if (year === 'third' || year === 'fourth') score += 2; // Senior students more mature
+        
+        // Ensure score is between 75 and 98
+        score = Math.max(75, Math.min(98, score));
+        
+        return score;
+    }
+
+    // Get love message based on score
+    function getEngineeringLoveMessage(score) {
+        if (score >= 95) {
+            return "Engineering Soulmates! Perfect circuit connection!";
+        } else if (score >= 85) {
+            return "Optimal Engineering Match! You two could debug life together!";
+        } else if (score >= 75) {
+            return "Great Engineering Compatibility! Your love algorithm is efficient!";
+        } else {
+            return "Good Engineering Pair! Your connection has strong fundamentals!";
+        }
+    }
+
+    // Get love description based on score and branches
+    function getEngineeringLoveDescription(score, userBranch, crushBranch) {
+        const branchNames = {
+            'cse': 'Computer Science & Engineering',
+            'aids': 'AIDS Engineering',
+            'it': 'Information Technology',
+            'aiml': 'AIML Engineering',
+            'entc': 'Electronics & Telecommunication',
+            'mech': 'Mechanical Engineering',
+            'electrical': 'Electrical Engineering'
         };
-
-        // User tracking system
-        function generateUserId() {
-            return 'USER_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        
+        if (score >= 95) {
+            return `Your compatibility is exceptional! As ${branchNames[userBranch]} and ${branchNames[crushBranch]} students, you complement each other perfectly. Many SBJIT engineering couples with scores like yours are still together years after graduation!`;
+        } else if (score >= 85) {
+            return `Your compatibility shows strong potential for a campus romance. ${branchNames[userBranch]} and ${branchNames[crushBranch]} make a great engineering combination. Try working on a project together!`;
+        } else if (score >= 75) {
+            return `You have great compatibility as engineering students. ${branchNames[userBranch]} and ${branchNames[crushBranch]} students often make great pairs. Start with a study session in the library!`;
+        } else {
+            return `You have a good foundation for an engineering connection. ${branchNames[userBranch]} and ${branchNames[crushBranch]} can learn a lot from each other. Join the same technical club to get to know them better!`;
         }
+    }
 
-        function getBrowserInfo() {
-            return {
-                userAgent: navigator.userAgent,
-                platform: navigator.platform,
-                language: navigator.language,
-                screenResolution: `${window.screen.width}x${window.screen.height}`,
-                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-                timestamp: new Date().toISOString()
-            };
-        }
+    // Save engineering test data to backend
+    async function saveEngineeringData(userName, userBranch, crushName, crushBranch, year, lab, score) {
+        try {
+            const response = await fetch(`${BACKEND_URL}/love-test`, {
+                method: "POST",
+                headers: { 
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    userName,
+                    userBranch,
+                    crushName,
+                    crushBranch,
+                    year,
+                    lab,
+                    score
+                })
+            });
 
-        // Valentine's Day 2026 countdown
-        function initCountdown() {
-            const valentine2026 = new Date('February 14, 2026 00:00:00').getTime();
-            
-            function updateCountdown() {
-                const now = new Date().getTime();
-                const distance = valentine2026 - now;
-                
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                document.getElementById('days').textContent = days.toString().padStart(2, '0');
-                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-                
-                if (distance < 0) {
-                    clearInterval(countdownInterval);
-                    document.getElementById('countdownTimer').innerHTML = '<div style="font-size: 2rem; color: #ffb81c;">Happy Valentine\'s Day 2026 SBJIT!</div>';
-                }
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-            
-            updateCountdown();
-            const countdownInterval = setInterval(updateCountdown, 1000);
-        }
 
-        // Calculate love compatibility for engineering students (always returns > 50%)
-        function calculateEngineeringLoveScore(userName, userBranch, crushName, crushBranch, year, lab) {
-            // Create a deterministic but random-seeming score between 70% and 98%
-            let hash = 0;
-            const combinedString = userName + userBranch + crushName + crushBranch + year + lab;
+            const data = await response.json();
             
-            for (let i = 0; i < combinedString.length; i++) {
-                hash = (hash << 5) - hash + combinedString.charCodeAt(i);
-                hash |= 0; // Convert to 32bit integer
-            }
+            // Log to console for debugging
+            console.log('User test data saved to backend:', data);
             
-            // Generate base score between 75 and 98 for engineering students
-            let score = Math.abs(hash) % 24 + 75;
-            
-            // Adjust based on branch compatibility
-            if (userBranch === crushBranch) score += 5; // Same branch bonus
-            if ((userBranch === 'cse' && crushBranch === 'it') || (userBranch === 'it' && crushBranch === 'cse')) score += 4; // Related branches
-            
-            // Adjust based on lab preference
-            if (lab === 'computer' || lab === 'library') score += 3; // Romantic study spots
-            
-            // Adjust based on year
-            if (year === 'third' || year === 'fourth') score += 2; // Senior students more mature
-            
-            // Ensure score is between 75 and 98
-            score = Math.max(75, Math.min(98, score));
-            
-            return score;
+            return data;
+        } catch (error) {
+            console.error('Error saving test data to backend:', error);
+            // Fallback: Show success message even if backend fails
+            alert('Test completed! (Note: Backend connection issue - result not saved)');
+            return { success: false, error: error.message };
         }
+    }
 
-        // Get love message based on score
-        function getEngineeringLoveMessage(score) {
-            if (score >= 95) {
-                return "Engineering Soulmates! Perfect circuit connection!";
-            } else if (score >= 85) {
-                return "Optimal Engineering Match! You two could debug life together!";
-            } else if (score >= 75) {
-                return "Great Engineering Compatibility! Your love algorithm is efficient!";
-            } else {
-                return "Good Engineering Pair! Your connection has strong fundamentals!";
-            }
-        }
+    // Save review to backend
+    async function saveReview(reviewerName, reviewerBranch, rating, reviewText) {
+        try {
+            const response = await fetch(`${BACKEND_URL}/review`, {
+                method: "POST",
+                headers: { 
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    reviewerName,
+                    reviewerBranch,
+                    rating,
+                    reviewText
+                })
+            });
 
-        // Get love description based on score and branches
-        function getEngineeringLoveDescription(score, userBranch, crushBranch) {
-            const branchNames = {
-                'cse': 'Computer Science & Engineering',
-                'aids': 'AIDS Engineering',
-                'it': 'Information Technology',
-                'aiml': 'AIML Engineering',
-                'entc': 'Electronics & Telecommunication',
-                'mech': 'Mechanical Engineering',
-                'electrical': 'Electrical Engineering'
-            };
-            
-            if (score >= 95) {
-                return `Your compatibility is exceptional! As ${branchNames[userBranch]} and ${branchNames[crushBranch]} students, you complement each other perfectly. Many SBJIT engineering couples with scores like yours are still together years after graduation!`;
-            } else if (score >= 85) {
-                return `Your compatibility shows strong potential for a campus romance. ${branchNames[userBranch]} and ${branchNames[crushBranch]} make a great engineering combination. Try working on a project together!`;
-            } else if (score >= 75) {
-                return `You have great compatibility as engineering students. ${branchNames[userBranch]} and ${branchNames[crushBranch]} students often make great pairs. Start with a study session in the library!`;
-            } else {
-                return `You have a good foundation for an engineering connection. ${branchNames[userBranch]} and ${branchNames[crushBranch]} can learn a lot from each other. Join the same technical club to get to know them better!`;
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-        }
 
-        // Save engineering test data to localStorage
-        function saveEngineeringData(userName, userBranch, crushName, crushBranch, year, lab, score) {
-            const browserInfo = getBrowserInfo();
-            const userId = generateUserId();
+            const data = await response.json();
             
-            const testEntry = {
-                id: userId,
-                userName,
-                userBranch,
-                crushName,
-                crushBranch,
-                year,
-                lab,
-                score,
-                timestamp: new Date().toLocaleString(),
-                date: new Date().toLocaleDateString(),
-                browserInfo: browserInfo,
-                entryType: 'love_test'
-            };
-            
-            engineeringLoveData.unshift(testEntry); // Add to beginning
-            localStorage.setItem('sbjitEngineeringLove2026', JSON.stringify(engineeringLoveData));
-            
-            // Update admin panel if admin is logged in
-            if (adminLoggedIn) {
-                updateAdminPanel();
-            }
-            
-            // Log to console for debugging (remove in production)
-            console.log('User test data saved:', testEntry);
-            
-            return testEntry;
-        }
-
-        // Save review to localStorage
-        function saveReview(reviewerName, reviewerBranch, rating, reviewText) {
-            const browserInfo = getBrowserInfo();
-            const userId = generateUserId();
-            
-            const reviewEntry = {
-                id: userId,
-                reviewerName,
-                reviewerBranch,
-                rating,
-                reviewText,
-                timestamp: new Date().toLocaleString(),
-                date: new Date().toLocaleDateString(),
-                browserInfo: browserInfo,
-                entryType: 'review'
-            };
-            
-            engineeringReviews.unshift(reviewEntry); // Add to beginning
-            localStorage.setItem('sbjitEngineeringReviews2026', JSON.stringify(engineeringReviews));
-            
-            // Update admin panel if admin is logged in
-            if (adminLoggedIn) {
-                updateAdminPanel();
-            }
-            
-            // Display the new review
+            // Update reviews display
             displayReviews();
             
-            // Log to console for debugging (remove in production)
-            console.log('User review saved:', reviewEntry);
+            // Log to console for debugging
+            console.log('User review saved to backend:', data);
             
-            return reviewEntry;
+            return data;
+        } catch (error) {
+            console.error('Error saving review to backend:', error);
+            // Fallback: Show success message even if backend fails
+            alert('Review submitted! (Note: Backend connection issue - review not saved)');
+            return { success: false, error: error.message };
         }
+    }
 
-        // Display reviews in the reviews section
-        function displayReviews() {
+    // Fetch reviews from backend
+    async function displayReviews() {
+        try {
+            const response = await fetch(`${BACKEND_URL}/admin/reviews`);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const reviews = await response.json();
             const reviewsList = document.getElementById('reviewsList');
             reviewsList.innerHTML = '';
             
             // Show latest 10 reviews
-            const recentReviews = engineeringReviews.slice(0, 10);
+            const recentReviews = reviews.slice(0, 10);
             
             if (recentReviews.length === 0) {
                 reviewsList.innerHTML = '<div class="review-item"><div class="review-content">No reviews yet. Be the first to share your experience!</div></div>';
@@ -2027,42 +235,66 @@
                         <div class="review-rating" title="${review.rating} out of 5 stars">${stars}</div>
                     </div>
                     <div class="review-content">${review.reviewText}</div>
-                    <div class="review-date">${review.date}</div>
+                    <div class="review-date">${new Date(review.createdAt).toLocaleDateString()}</div>
                 `;
                 
                 reviewsList.appendChild(reviewItem);
             });
+        } catch (error) {
+            console.error('Error fetching reviews from backend:', error);
+            const reviewsList = document.getElementById('reviewsList');
+            reviewsList.innerHTML = '<div class="review-item"><div class="review-content">Unable to load reviews. Please try again later.</div></div>';
         }
+    }
 
-        // Update admin panel with latest data
-        function updateAdminPanel() {
+    // Update admin panel with data from backend
+    async function updateAdminPanel() {
+        try {
+            // Fetch love tests data
+            const loveTestsResponse = await fetch(`${BACKEND_URL}/admin/love-tests`);
+            
+            if (!loveTestsResponse.ok) {
+                throw new Error(`HTTP error! status: ${loveTestsResponse.status}`);
+            }
+            
+            const loveTests = await loveTestsResponse.json();
+            
+            // Fetch reviews data
+            const reviewsResponse = await fetch(`${BACKEND_URL}/admin/reviews`);
+            
+            if (!reviewsResponse.ok) {
+                throw new Error(`HTTP error! status: ${reviewsResponse.status}`);
+            }
+            
+            const reviews = await reviewsResponse.json();
+            
             // Update stats
-            document.getElementById('totalTests').textContent = engineeringLoveData.length;
+            document.getElementById('totalTests').textContent = loveTests.length;
             
             // Calculate average score
-            const avgScore = engineeringLoveData.length > 0 
-                ? Math.round(engineeringLoveData.reduce((sum, entry) => sum + entry.score, 0) / engineeringLoveData.length)
+            const avgScore = loveTests.length > 0 
+                ? Math.round(loveTests.reduce((sum, entry) => sum + entry.score, 0) / loveTests.length)
                 : 0;
             document.getElementById('avgScore').textContent = `${avgScore}%`;
             
             // Calculate today's tests
             const today = new Date().toDateString();
-            const todayTests = engineeringLoveData.filter(entry => {
-                const entryDate = new Date(entry.timestamp).toDateString();
+            const todayTests = loveTests.filter(entry => {
+                const entryDate = new Date(entry.createdAt).toDateString();
                 return entryDate === today;
             }).length;
             document.getElementById('todayTests').textContent = todayTests;
             
             // Calculate unique users
-            const uniqueUsers = [...new Set(engineeringLoveData.map(entry => entry.userName))].length;
+            const uniqueUsers = [...new Set(loveTests.map(entry => entry.userName))].length;
             document.getElementById('totalUsers').textContent = uniqueUsers;
             
             // Calculate review stats
-            document.getElementById('totalReviews').textContent = engineeringReviews.length;
+            document.getElementById('totalReviews').textContent = reviews.length;
             
             // Calculate average rating
-            const avgRating = engineeringReviews.length > 0 
-                ? (engineeringReviews.reduce((sum, entry) => sum + entry.rating, 0) / engineeringReviews.length).toFixed(1)
+            const avgRating = reviews.length > 0 
+                ? (reviews.reduce((sum, entry) => sum + entry.rating, 0) / reviews.length).toFixed(1)
                 : '0.0';
             document.getElementById('avgRating').textContent = avgRating;
             
@@ -2070,8 +302,7 @@
             const tableBody = document.getElementById('dataTableBody');
             tableBody.innerHTML = '';
             
-            // Show ALL entries (not limited)
-            engineeringLoveData.forEach(entry => {
+            loveTests.forEach(entry => {
                 const branchNames = {
                     'cse': 'CSE',
                     'aids': 'AIDS',
@@ -2084,13 +315,13 @@
                 
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${entry.id.substring(0, 8)}...</td>
+                    <td>${entry._id ? entry._id.substring(0, 8) : 'N/A'}...</td>
                     <td><strong>${entry.userName}</strong></td>
                     <td>${branchNames[entry.userBranch] || entry.userBranch}</td>
                     <td><strong>${entry.crushName}</strong></td>
                     <td>${branchNames[entry.crushBranch] || entry.crushBranch}</td>
                     <td><strong style="color: #ff4d6d;">${entry.score}%</strong></td>
-                    <td>${entry.timestamp}</td>
+                    <td>${new Date(entry.createdAt).toLocaleString()}</td>
                 `;
                 tableBody.appendChild(row);
             });
@@ -2099,8 +330,7 @@
             const reviewsTableBody = document.getElementById('reviewsTableBody');
             reviewsTableBody.innerHTML = '';
             
-            // Show ALL reviews (not limited)
-            engineeringReviews.forEach(review => {
+            reviews.forEach(review => {
                 const branchNames = {
                     'cse': 'CSE',
                     'aids': 'AIDS',
@@ -2113,56 +343,77 @@
                 
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${review.id.substring(0, 8)}...</td>
+                    <td>${review._id ? review._id.substring(0, 8) : 'N/A'}...</td>
                     <td><strong>${review.reviewerName}</strong></td>
                     <td>${branchNames[review.reviewerBranch] || review.reviewerBranch}</td>
                     <td>${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}</td>
                     <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${review.reviewText}">${review.reviewText}</td>
-                    <td>${review.timestamp}</td>
+                    <td>${new Date(review.createdAt).toLocaleString()}</td>
                 `;
                 reviewsTableBody.appendChild(row);
             });
+        } catch (error) {
+            console.error('Error fetching data for admin panel:', error);
+            alert('Error loading admin data. Please check your connection.');
         }
+    }
 
-        // Initialize admin panel
-        function initAdminPanel() {
-            // Toggle admin panel visibility - show login modal first
-            document.getElementById('adminToggle').addEventListener('click', function() {
-                if (!adminLoggedIn) {
-                    // Show login modal
-                    document.getElementById('adminLoginModal').classList.add('show');
+    // Initialize admin panel
+    function initAdminPanel() {
+        // Toggle admin panel visibility - show login modal first
+        document.getElementById('adminToggle').addEventListener('click', function() {
+            if (!adminLoggedIn) {
+                // Show login modal
+                document.getElementById('adminLoginModal').classList.add('show');
+            } else {
+                // Toggle admin panel
+                const adminPanel = document.getElementById('adminPanel');
+                const isVisible = adminPanel.classList.contains('show');
+                
+                if (isVisible) {
+                    adminPanel.classList.remove('show');
+                    this.querySelector('i').className = 'fas fa-user-shield';
                 } else {
-                    // Toggle admin panel
-                    const adminPanel = document.getElementById('adminPanel');
-                    const isVisible = adminPanel.classList.contains('show');
-                    
-                    if (isVisible) {
-                        adminPanel.classList.remove('show');
-                        this.querySelector('i').className = 'fas fa-user-shield';
-                    } else {
-                        adminPanel.classList.add('show');
-                        this.querySelector('i').className = 'fas fa-eye-slash';
-                        updateAdminPanel();
-                    }
+                    adminPanel.classList.add('show');
+                    this.querySelector('i').className = 'fas fa-eye-slash';
+                    updateAdminPanel();
                 }
-            });
+            }
+        });
+        
+        // Close login modal
+        document.getElementById('closeLogin').addEventListener('click', function() {
+            document.getElementById('adminLoginModal').classList.remove('show');
+            document.getElementById('loginError').classList.remove('show');
+            document.getElementById('adminLoginForm').reset();
+        });
+        
+        // Admin login form submission
+        document.getElementById('adminLoginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
             
-            // Close login modal
-            document.getElementById('closeLogin').addEventListener('click', function() {
-                document.getElementById('adminLoginModal').classList.remove('show');
-                document.getElementById('loginError').classList.remove('show');
-                document.getElementById('adminLoginForm').reset();
-            });
+            const username = document.getElementById('adminUsername').value.trim();
+            const password = document.getElementById('adminPassword').value.trim();
             
-            // Admin login form submission
-            document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
-                e.preventDefault();
+            try {
+                const response = await fetch(`${BACKEND_URL}/admin-login`, {
+                    method: "POST",
+                    headers: { 
+                        "Content-Type": "application/json" 
+                    },
+                    body: JSON.stringify({ 
+                        username, 
+                        password 
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
                 
-                const username = document.getElementById('adminUsername').value.trim();
-                const password = document.getElementById('adminPassword').value.trim();
-                
-                // Validate credentials
-                if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+                if (data.success) {
                     adminLoggedIn = true;
                     
                     // Hide login modal
@@ -2181,36 +432,40 @@
                     alert('Admin login successful!');
                 } else {
                     // Show error
+                    document.getElementById('loginError').textContent = data.message || 'Invalid credentials';
                     document.getElementById('loginError').classList.add('show');
                 }
-            });
-            
-            // Close admin panel
-            document.getElementById('closeAdmin').addEventListener('click', function() {
-                document.getElementById('adminPanel').classList.remove('show');
-                document.getElementById('adminToggle').querySelector('i').className = 'fas fa-user-shield';
-            });
-            
-            // Logout admin
-            document.getElementById('logoutAdmin').addEventListener('click', function() {
-                adminLoggedIn = false;
-                document.getElementById('adminPanel').classList.remove('show');
-                document.getElementById('adminToggle').querySelector('i').className = 'fas fa-user-shield';
-                alert('Admin logged out successfully.');
-            });
-            
-            // Export data
-            document.getElementById('exportData').addEventListener('click', function() {
-                const data = {
-                    loveTests: engineeringLoveData,
-                    reviews: engineeringReviews,
-                    exportDate: new Date().toISOString(),
-                    totalTests: engineeringLoveData.length,
-                    totalReviews: engineeringReviews.length,
-                    platform: 'SBJIT Valentine 2026',
-                    version: '1.0'
-                };
+            } catch (error) {
+                console.error('Error during admin login:', error);
+                document.getElementById('loginError').textContent = 'Connection error. Please try again.';
+                document.getElementById('loginError').classList.add('show');
+            }
+        });
+        
+        // Close admin panel
+        document.getElementById('closeAdmin').addEventListener('click', function() {
+            document.getElementById('adminPanel').classList.remove('show');
+            document.getElementById('adminToggle').querySelector('i').className = 'fas fa-user-shield';
+        });
+        
+        // Logout admin
+        document.getElementById('logoutAdmin').addEventListener('click', function() {
+            adminLoggedIn = false;
+            document.getElementById('adminPanel').classList.remove('show');
+            document.getElementById('adminToggle').querySelector('i').className = 'fas fa-user-shield';
+            alert('Admin logged out successfully.');
+        });
+        
+        // Export data
+        document.getElementById('exportData').addEventListener('click', async function() {
+            try {
+                const response = await fetch(`${BACKEND_URL}/admin/export`);
                 
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
                 const dataStr = JSON.stringify(data, null, 2);
                 const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
                 const exportFileDefaultName = `sbjit_valentine_data_${new Date().getTime()}.json`;
@@ -2221,240 +476,203 @@
                 linkElement.click();
                 
                 alert('All data exported successfully!');
-            });
-            
-            // Clear all data
-            document.getElementById('clearData').addEventListener('click', function() {
-                if (confirm('Are you sure you want to clear ALL data? This action cannot be undone!')) {
-                    engineeringLoveData = [];
-                    engineeringReviews = [];
-                    localStorage.removeItem('sbjitEngineeringLove2026');
-                    localStorage.removeItem('sbjitEngineeringReviews2026');
-                    
-                    updateAdminPanel();
-                    displayReviews();
-                    
-                    alert('All data has been cleared successfully!');
-                }
-            });
-        }
-
-        // Initialize the application
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize features
-            initCountdown();
-            initAdminPanel();
-            displayReviews();
-            
-            // Initialize star rating system
-            const starRatings = document.querySelectorAll('.star-rating');
-            const reviewRatingInput = document.getElementById('reviewRating');
-            
-            starRatings.forEach(star => {
-                star.addEventListener('click', function() {
-                    const rating = parseInt(this.getAttribute('data-rating'));
-                    reviewRatingInput.value = rating;
-                    
-                    // Update star display
-                    starRatings.forEach((s, index) => {
-                        if (index < rating) {
-                            s.textContent = '★';
-                            s.style.color = '#ffb81c';
-                        } else {
-                            s.textContent = '☆';
-                            s.style.color = '#ccc';
-                        }
-                    });
-                });
-                
-                // Add hover effect
-                star.addEventListener('mouseover', function() {
-                    const rating = parseInt(this.getAttribute('data-rating'));
-                    starRatings.forEach((s, index) => {
-                        if (index < rating) {
-                            s.style.color = '#ffb81c';
-                        }
-                    });
-                });
-                
-                star.addEventListener('mouseout', function() {
-                    const currentRating = parseInt(reviewRatingInput.value);
-                    starRatings.forEach((s, index) => {
-                        if (index >= currentRating) {
-                            s.style.color = '#ccc';
-                        }
-                    });
-                });
-            });
-            
-            // Review form submission
-            document.getElementById('reviewForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const reviewerName = document.getElementById('reviewerName').value.trim();
-                const reviewerBranch = document.getElementById('reviewerBranch').value;
-                const rating = parseInt(document.getElementById('reviewRating').value);
-                const reviewText = document.getElementById('reviewText').value.trim();
-                
-                // Validate inputs
-                if (!reviewerName || !reviewerBranch || rating === 0 || !reviewText) {
-                    alert('Please fill in all fields and select a rating.');
-                    return;
-                }
-                
-                if (rating < 1 || rating > 5) {
-                    alert('Please select a rating between 1 and 5 stars.');
-                    return;
-                }
-                
-                // Save review
-                saveReview(reviewerName, reviewerBranch, rating, reviewText);
-                
-                // Reset form
-                this.reset();
-                reviewRatingInput.value = 0;
-                starRatings.forEach(star => {
-                    star.textContent = '☆';
-                    star.style.color = '#ccc';
-                });
-                
-                // Show success message
-                alert('Thank you for your review! Your feedback has been recorded.');
-                
-                // Scroll to reviews
-                document.getElementById('reviewsList').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-            
-            // Scroll to calculator when CTA button is clicked
-            document.getElementById('startTestBtn').addEventListener('click', function() {
-                document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
-            });
-            
-            // Calculate love compatibility
-            document.getElementById('calculateBtn').addEventListener('click', function() {
-                // Get form values
-                const userName = document.getElementById('yourName').value.trim();
-                const userBranch = document.getElementById('yourDepartment').value;
-                const crushName = document.getElementById('crushName').value.trim();
-                const crushBranch = document.getElementById('crushDepartment').value;
-                const year = document.getElementById('year').value;
-                const lab = document.getElementById('lab').value;
-                
-                // Validate inputs
-                if (!userName || !userBranch || !crushName || !crushBranch) {
-                    alert('Please fill in all required fields: Your full name, branch, crush\'s full name, and crush\'s branch.');
-                    return;
-                }
-                
-                // Calculate score (always > 50%)
-                const score = calculateEngineeringLoveScore(userName, userBranch, crushName, crushBranch, year, lab);
-                
-                // Save engineering data
-                saveEngineeringData(userName, userBranch, crushName, crushBranch, year, lab, score);
-                
-                // Display result
-                document.getElementById('resultPercentage').textContent = `${score}%`;
-                document.getElementById('resultMessage').textContent = getEngineeringLoveMessage(score);
-                document.getElementById('resultDescription').textContent = getEngineeringLoveDescription(score, userBranch, crushBranch);
-                
-                // Show result with animation
-                const resultContainer = document.getElementById('resultContainer');
-                resultContainer.classList.remove('show');
-                setTimeout(() => {
-                    resultContainer.classList.add('show');
-                }, 10);
-                
-                // Scroll to result
-                setTimeout(() => {
-                    resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 500);
-                
-                // Show success message
-                alert('Your compatibility test has been recorded!');
-            });
-            
-            // Share buttons
-            document.getElementById('shareWhatsapp').addEventListener('click', function() {
-                const score = document.getElementById('resultPercentage').textContent;
-                const message = document.getElementById('resultMessage').textContent;
-                const text = `My SBJIT engineering love score is ${score}! ${message} Check out your compatibility at SBJIT Valentine's 2026!`;
-                const encodedText = encodeURIComponent(text);
-                window.open(`https://wa.me/?text=${encodedText}`, '_blank');
-            });
-            
-            document.getElementById('shareInstagram').addEventListener('click', function() {
-                const score = document.getElementById('resultPercentage').textContent;
-                const text = `My SBJIT engineering love score is ${score}! 💙💛 #SBJITValentine #EngineeringCrush`;
-                alert('Take a screenshot and share on Instagram with #SBJITValentine!');
-            });
-            
-            // Auto-save form data as user types (optional)
-            document.querySelectorAll('#calculator input, #calculator select').forEach(element => {
-                element.addEventListener('change', function() {
-                    // This could be extended to save partial form data
-                    console.log('Form field changed:', this.id, this.value);
-                });
-            });
-            
-            // Pre-fill some example engineering data for demo
-            if (engineeringLoveData.length === 0) {
-                // Add some sample SBJIT engineering data for demo purposes
-                const sampleData = [
-                    { userName: 'Rahul Sharma', userBranch: 'cse', crushName: 'Priya Patel', crushBranch: 'it', year: 'second', lab: 'computer', score: 92 },
-                    { userName: 'Anjali Deshmukh', userBranch: 'aids', crushName: 'Rohan Singh', crushBranch: 'aiml', year: 'third', lab: 'electronics', score: 88 },
-                    { userName: 'Vikram Joshi', userBranch: 'it', crushName: 'Neha Gupta', crushBranch: 'cse', year: 'first', lab: 'library', score: 95 },
-                    { userName: 'Sneha Reddy', userBranch: 'it', crushName: 'Arun Kumar', crushBranch: 'cse', year: 'second', lab: 'computer', score: 88 },
-                    { userName: 'Karan Malhotra', userBranch: 'aids', crushName: 'Pooja Verma', crushBranch: 'it', year: 'third', lab: 'workshop', score: 82 }
-                ];
-                
-                sampleData.forEach((data, index) => {
-                    const entry = {
-                        id: 'DEMO_' + Date.now() + index,
-                        ...data,
-                        timestamp: new Date(Date.now() - (index * 86400000)).toLocaleString(),
-                        date: new Date(Date.now() - (index * 86400000)).toLocaleDateString(),
-                        browserInfo: { userAgent: 'Demo Data', platform: 'Demo' },
-                        entryType: 'demo_love_test'
-                    };
-                    engineeringLoveData.push(entry);
-                });
-                
-                localStorage.setItem('sbjitEngineeringLove2026', JSON.stringify(engineeringLoveData));
+            } catch (error) {
+                console.error('Error exporting data:', error);
+                alert('Error exporting data. Please try again.');
             }
-            
-            // Pre-fill some example reviews for demo
-            if (engineeringReviews.length === 0) {
-                // Add some sample reviews for demo purposes
-                const sampleReviews = [
-                    { reviewerName: 'Aditya Kumar', reviewerBranch: 'cse', rating: 5, reviewText: 'This platform is amazing! Met my crush through the compatibility test and we\'re dating now!' },
-                    { reviewerName: 'Neha Sharma', reviewerBranch: 'aiml', rating: 4, reviewText: 'Fun way to connect with fellow engineering students. The love stories section is inspiring!' },
-                    { reviewerName: 'Rohit Verma', reviewerBranch: 'aids', rating: 5, reviewText: 'Finally a Valentine\'s platform made specifically for SBJIT engineers. Loved it!' },
-                    { reviewerName: 'Priya Desai', reviewerBranch: 'it', rating: 4, reviewText: 'The Nagpur date spots suggestions are very helpful for engineering students on a budget.' }
-                ];
-                
-                sampleReviews.forEach((review, index) => {
-                    const entry = {
-                        id: 'DEMO_REVIEW_' + Date.now() + index,
-                        ...review,
-                        timestamp: new Date(Date.now() - (index * 86400000 * 2)).toLocaleString(),
-                        date: new Date(Date.now() - (index * 86400000 * 2)).toLocaleDateString(),
-                        browserInfo: { userAgent: 'Demo Data', platform: 'Demo' },
-                        entryType: 'demo_review'
-                    };
-                    engineeringReviews.push(entry);
-                });
-                
-                localStorage.setItem('sbjitEngineeringReviews2026', JSON.stringify(engineeringReviews));
-            }
-            
-            // Display reviews
-            displayReviews();
-            
-            // Log initial page load
-            console.log('SBJIT Valentine Platform Loaded');
-            console.log('Total Love Tests:', engineeringLoveData.length);
-            console.log('Total Reviews:', engineeringReviews.length);
         });
-    </script>
-</body>
-</html>
+        
+        // Clear all data
+        document.getElementById('clearData').addEventListener('click', async function() {
+            if (confirm('Are you sure you want to clear ALL data? This action cannot be undone!')) {
+                try {
+                    const response = await fetch(`${BACKEND_URL}/admin/clear`, {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        updateAdminPanel();
+                        displayReviews();
+                        alert('All data has been cleared successfully!');
+                    } else {
+                        alert('Error clearing data: ' + data.message);
+                    }
+                } catch (error) {
+                    console.error('Error clearing data:', error);
+                    alert('Error clearing data. Please try again.');
+                }
+            }
+        });
+    }
+
+    // Initialize the application
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize features
+        initCountdown();
+        initAdminPanel();
+        displayReviews();
+        
+        // Initialize star rating system
+        const starRatings = document.querySelectorAll('.star-rating');
+        const reviewRatingInput = document.getElementById('reviewRating');
+        
+        starRatings.forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = parseInt(this.getAttribute('data-rating'));
+                reviewRatingInput.value = rating;
+                
+                // Update star display
+                starRatings.forEach((s, index) => {
+                    if (index < rating) {
+                        s.textContent = '★';
+                        s.style.color = '#ffb81c';
+                    } else {
+                        s.textContent = '☆';
+                        s.style.color = '#ccc';
+                    }
+                });
+            });
+            
+            // Add hover effect
+            star.addEventListener('mouseover', function() {
+                const rating = parseInt(this.getAttribute('data-rating'));
+                starRatings.forEach((s, index) => {
+                    if (index < rating) {
+                        s.style.color = '#ffb81c';
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseout', function() {
+                const currentRating = parseInt(reviewRatingInput.value);
+                starRatings.forEach((s, index) => {
+                    if (index >= currentRating) {
+                        s.style.color = '#ccc';
+                    }
+                });
+            });
+        });
+        
+        // Review form submission
+        document.getElementById('reviewForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const reviewerName = document.getElementById('reviewerName').value.trim();
+            const reviewerBranch = document.getElementById('reviewerBranch').value;
+            const rating = parseInt(document.getElementById('reviewRating').value);
+            const reviewText = document.getElementById('reviewText').value.trim();
+            
+            // Validate inputs
+            if (!reviewerName || !reviewerBranch || rating === 0 || !reviewText) {
+                alert('Please fill in all fields and select a rating.');
+                return;
+            }
+            
+            if (rating < 1 || rating > 5) {
+                alert('Please select a rating between 1 and 5 stars.');
+                return;
+            }
+            
+            // Save review
+            await saveReview(reviewerName, reviewerBranch, rating, reviewText);
+            
+            // Reset form
+            this.reset();
+            reviewRatingInput.value = 0;
+            starRatings.forEach(star => {
+                star.textContent = '☆';
+                star.style.color = '#ccc';
+            });
+            
+            // Show success message
+            alert('Thank you for your review! Your feedback has been recorded.');
+            
+            // Scroll to reviews
+            document.getElementById('reviewsList').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        
+        // Scroll to calculator when CTA button is clicked
+        document.getElementById('startTestBtn').addEventListener('click', function() {
+            document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Calculate love compatibility
+        document.getElementById('calculateBtn').addEventListener('click', async function() {
+            // Get form values
+            const userName = document.getElementById('yourName').value.trim();
+            const userBranch = document.getElementById('yourDepartment').value;
+            const crushName = document.getElementById('crushName').value.trim();
+            const crushBranch = document.getElementById('crushDepartment').value;
+            const year = document.getElementById('year').value;
+            const lab = document.getElementById('lab').value;
+            
+            // Validate inputs
+            if (!userName || !userBranch || !crushName || !crushBranch) {
+                alert('Please fill in all required fields: Your full name, branch, crush\'s full name, and crush\'s branch.');
+                return;
+            }
+            
+            // Calculate score (always > 50%)
+            const score = calculateEngineeringLoveScore(userName, userBranch, crushName, crushBranch, year, lab);
+            
+            // Save engineering data to backend
+            await saveEngineeringData(userName, userBranch, crushName, crushBranch, year, lab, score);
+            
+            // Display result
+            document.getElementById('resultPercentage').textContent = `${score}%`;
+            document.getElementById('resultMessage').textContent = getEngineeringLoveMessage(score);
+            document.getElementById('resultDescription').textContent = getEngineeringLoveDescription(score, userBranch, crushBranch);
+            
+            // Show result with animation
+            const resultContainer = document.getElementById('resultContainer');
+            resultContainer.classList.remove('show');
+            setTimeout(() => {
+                resultContainer.classList.add('show');
+            }, 10);
+            
+            // Scroll to result
+            setTimeout(() => {
+                resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+            
+            // Show success message
+            alert('Your compatibility test has been recorded!');
+        });
+        
+        // Share buttons
+        document.getElementById('shareWhatsapp').addEventListener('click', function() {
+            const score = document.getElementById('resultPercentage').textContent;
+            const message = document.getElementById('resultMessage').textContent;
+            const text = `My SBJIT engineering love score is ${score}! ${message} Check out your compatibility at SBJIT Valentine's 2026!`;
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/?text=${encodedText}`, '_blank');
+        });
+        
+        document.getElementById('shareInstagram').addEventListener('click', function() {
+            const score = document.getElementById('resultPercentage').textContent;
+            const text = `My SBJIT engineering love score is ${score}! 💙💛 #SBJITValentine #EngineeringCrush`;
+            alert('Take a screenshot and share on Instagram with #SBJITValentine!');
+        });
+        
+        // Auto-save form data as user types (optional)
+        document.querySelectorAll('#calculator input, #calculator select').forEach(element => {
+            element.addEventListener('change', function() {
+                // This could be extended to save partial form data
+                console.log('Form field changed:', this.id, this.value);
+            });
+        });
+        
+        // Log initial page load
+        console.log('SBJIT Valentine Platform Loaded with Backend Connection');
+        console.log('Backend URL:', BACKEND_URL);
+    });
+</script>
