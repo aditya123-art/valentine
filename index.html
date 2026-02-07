@@ -3,65 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Love Compatibility Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            text-align: center;
-            color: #333;
-        }
-        h1 {
-            color: #e63946;
-        }
-        #calculator {
-            border: 1px solid #dddddd;
-            border-radius: 5px;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
-            margin: auto;
-            width: 300px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #cccccc;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #e63946;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #d62839;
-        }
-    </style>
+    <title>SBJIT Students - Home</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Love Compatibility Calculator</h1>
-    <div id="calculator">
-        <input type="text" id="name1" placeholder="Your Name" required />
-        <input type="text" id="name2" placeholder="Partner's Name" required />
-        <button onclick="calculateCompatibility()">Calculate Compatibility</button>
-        <h2 id="result"></h2>
-    </div>
-    <script>
-        function calculateCompatibility() {
-            const name1 = document.getElementById('name1').value;
-            const name2 = document.getElementById('name2').value;
-            if(name1 && name2) {
-                const compatibility = Math.floor(Math.random() * 100) + 1;
-                document.getElementById('result').innerHTML = `${name1} & ${name2} are ${compatibility}% compatible!`;
-            } else {
-                alert('Please enter both names.');
-            }
-        }
-    </script>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Welcome to SBJIT</h1>
+        <p>Your journey to excellence begins here!</p>
+        <a href="#events" class="cta-button">Discover More</a>
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <div class="feature-card">
+            <h3>Modern Curriculum</h3>
+            <p>Stay updated with the latest educational trends and practices.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Interactive Learning</h3>
+            <p>Engaging and interactive learning experiences for all students.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Community Events</h3>
+            <p>Join our community events and make new friends!</p>
+        </div>
+    </section>
+
+    <section id="events">
+        <h2>Upcoming Events</h2>
+        <p>Check out our latest events and workshops!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 SBJIT Students. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
 </body>
 </html>
