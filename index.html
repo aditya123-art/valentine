@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SBJIT Nagpur Valentine's 2026 - Engineering Campus Love</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FIXED: Correct Google Fonts link -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -553,116 +554,129 @@
             color: white;
         }
 
-        /* Engineering Lab Date Ideas */
-        .lab-date-ideas {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+        /* User Reviews Section */
+        .reviews-section {
+            background-color: white;
+            border-radius: 25px;
+            padding: 50px;
+            margin-top: 40px;
+            border: 2px solid rgba(12, 35, 64, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
-        .lab-card {
-            background-color: white;
+        .reviews-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .reviews-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .review-form {
+            background: #f9f9f9;
             border-radius: 20px;
             padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
         }
 
-        .lab-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border-color: var(--sbjit-blue);
-        }
-
-        .lab-card::after {
-            content: 'SBJIT';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--sbjit-blue);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .lab-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--sbjit-blue) 0%, var(--valentine-pink) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
+        .review-form h3 {
+            color: var(--sbjit-blue);
+            margin-bottom: 25px;
             font-size: 1.8rem;
-            color: white;
-        }
-
-        .lab-card h3 {
-            font-size: 1.6rem;
-            color: var(--sbjit-blue);
-            margin-bottom: 15px;
             font-family: 'Playfair Display', serif;
         }
 
-        .lab-card p {
-            color: #666;
+        .review-form textarea {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
             font-size: 1.1rem;
+            transition: all 0.3s;
+            background-color: white;
+            color: #333;
+            resize: vertical;
+            min-height: 120px;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .lab-location {
-            font-size: 1rem;
-            color: var(--sbjit-blue);
+        .review-form textarea:focus {
+            border-color: var(--sbjit-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(12, 35, 64, 0.1);
+        }
+
+        .submit-review-btn {
+            background: linear-gradient(135deg, var(--sbjit-gold) 0%, var(--valentine-pink) 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
             font-weight: 600;
-            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(255, 184, 28, 0.3);
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            gap: 15px;
+            margin-top: 25px;
         }
 
-        /* Engineering Love Stories */
-        .engineering-stories {
-            background: linear-gradient(135deg, rgba(12, 35, 64, 0.05), rgba(255, 77, 109, 0.05));
-            border-radius: 25px;
-            padding: 40px;
-            margin-top: 50px;
+        .submit-review-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 184, 28, 0.4);
         }
 
-        .stories-title {
-            text-align: center;
-            font-size: 2.2rem;
+        .reviews-list {
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+
+        .reviews-list h3 {
             color: var(--sbjit-blue);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
             font-family: 'Playfair Display', serif;
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 10px 0;
+            z-index: 1;
         }
 
-        .story {
+        .review-item {
             background: white;
             border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
+            padding: 20px;
+            margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border-left: 5px solid var(--valentine-pink);
+            border-left: 4px solid var(--sbjit-gold);
         }
 
-        .story-header {
+        .review-header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 15px;
             margin-bottom: 15px;
         }
 
-        .story-avatar {
-            width: 50px;
-            height: 50px;
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
             background: linear-gradient(135deg, var(--sbjit-blue), var(--valentine-pink));
             border-radius: 50%;
             display: flex;
@@ -670,23 +684,120 @@
             justify-content: center;
             color: white;
             font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .reviewer-details h4 {
+            color: var(--sbjit-blue);
+            font-size: 1.1rem;
+        }
+
+        .reviewer-details p {
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        .review-rating {
+            color: var(--sbjit-gold);
             font-size: 1.2rem;
         }
 
-        .story-author h4 {
-            color: var(--sbjit-blue);
-            font-size: 1.3rem;
-        }
-
-        .story-author p {
-            color: #777;
-            font-size: 0.9rem;
-        }
-
-        .story-content {
+        .review-content {
             color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .review-date {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--sbjit-blue);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--sbjit-gold);
+        }
+
+        .footer-section p {
+            max-width: 300px;
+            margin: 0 auto;
             font-size: 1.1rem;
-            line-height: 1.7;
+            color: #ccc;
+        }
+
+        .campus-departments {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .campus-departments li {
+            padding: 5px 0;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .campus-departments li i {
+            color: var(--sbjit-gold);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--sbjit-gold);
+            color: var(--sbjit-blue);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
         }
 
         /* Admin Login Modal */
@@ -986,300 +1097,6 @@
         .admin-toggle:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 25px rgba(12, 35, 64, 0.6);
-        }
-
-        /* User Reviews Section */
-        .reviews-section {
-            background-color: white;
-            border-radius: 25px;
-            padding: 50px;
-            margin-top: 40px;
-            border: 2px solid rgba(12, 35, 64, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .reviews-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        @media (max-width: 992px) {
-            .reviews-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .review-form {
-            background: #f9f9f9;
-            border-radius: 20px;
-            padding: 30px;
-        }
-
-        .review-form h3 {
-            color: var(--sbjit-blue);
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .review-form textarea {
-            width: 100%;
-            padding: 18px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            background-color: white;
-            color: #333;
-            resize: vertical;
-            min-height: 120px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .review-form textarea:focus {
-            border-color: var(--sbjit-blue);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(12, 35, 64, 0.1);
-        }
-
-        .submit-review-btn {
-            background: linear-gradient(135deg, var(--sbjit-gold) 0%, var(--valentine-pink) 100%);
-            color: white;
-            border: none;
-            padding: 18px 40px;
-            font-size: 1.2rem;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-            box-shadow: 0 8px 20px rgba(255, 184, 28, 0.3);
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .submit-review-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(255, 184, 28, 0.4);
-        }
-
-        .reviews-list {
-            max-height: 500px;
-            overflow-y: auto;
-            padding-right: 15px;
-        }
-
-        .reviews-list h3 {
-            color: var(--sbjit-blue);
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-            font-family: 'Playfair Display', serif;
-            position: sticky;
-            top: 0;
-            background: white;
-            padding: 10px 0;
-            z-index: 1;
-        }
-
-        .review-item {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--sbjit-gold);
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .reviewer-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .reviewer-avatar {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--sbjit-blue), var(--valentine-pink));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .reviewer-details h4 {
-            color: var(--sbjit-blue);
-            font-size: 1.1rem;
-        }
-
-        .reviewer-details p {
-            color: #777;
-            font-size: 0.85rem;
-        }
-
-        .review-rating {
-            color: var(--sbjit-gold);
-            font-size: 1.2rem;
-        }
-
-        .review-content {
-            color: #555;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .review-date {
-            color: #999;
-            font-size: 0.85rem;
-            margin-top: 10px;
-            text-align: right;
-        }
-
-        /* Nagpur Local Spots */
-        .nagpur-spots {
-            background: white;
-            border-radius: 25px;
-            padding: 40px;
-            margin-top: 40px;
-            border: 2px solid rgba(12, 35, 64, 0.1);
-        }
-
-        .spots-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--sbjit-blue);
-            margin-bottom: 30px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .spots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .spot-card {
-            background: #f9f9f9;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .spot-card:hover {
-            border-color: var(--sbjit-gold);
-            transform: translateY(-5px);
-        }
-
-        .spot-card h4 {
-            color: var(--sbjit-blue);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .spot-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--sbjit-blue);
-            color: white;
-            padding: 60px 0 30px;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 300px;
-            margin-bottom: 30px;
-        }
-
-        .footer-section h3 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--sbjit-gold);
-        }
-
-        .footer-section p {
-            max-width: 300px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            color: #ccc;
-        }
-
-        .campus-departments {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .campus-departments li {
-            padding: 5px 0;
-            color: #ccc;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .campus-departments li i {
-            color: var(--sbjit-gold);
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 25px;
-        }
-
-        .social-icons a {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s;
-        }
-
-        .social-icons a:hover {
-            background-color: var(--sbjit-gold);
-            color: var(--sbjit-blue);
-            transform: translateY(-5px);
-        }
-
-        .copyright {
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.6);
         }
 
         /* Admin Data Info */
@@ -1677,11 +1494,11 @@
             <form class="login-form" id="adminLoginForm">
                 <div class="input-group">
                     <label for="adminUsername"><i class="fas fa-user-shield"></i> Username</label>
-                    <input type="text" id="adminUsername" placeholder="" required>
+                    <input type="text" id="adminUsername" placeholder="Enter admin username" required>
                 </div>
                 <div class="input-group">
                     <label for="adminPassword"><i class="fas fa-lock"></i> Password</label>
-                    <input type="password" id="adminPassword" placeholder="" required>
+                    <input type="password" id="adminPassword" placeholder="Enter admin password" required>
                 </div>
                 <div class="login-error" id="loginError">
                     Invalid username or password. Please try again.
@@ -1703,11 +1520,9 @@
         <div class="admin-header">
             <h3>SBJIT Admin Dashboard</h3>
             <div class="admin-actions">
-                <button class="admin-btn" id="exportData">
-                    <i class="fas fa-download"></i> Export Data
-                </button>
-                <button class="admin-btn" id="clearData">
-                    <i class="fas fa-trash"></i> Clear All Data
+                <!-- REMOVED non-existent buttons and added new WORKING ones -->
+                <button class="admin-btn" id="refreshData">
+                    <i class="fas fa-sync-alt"></i> Refresh Data
                 </button>
                 <button class="admin-btn logout-admin" id="logoutAdmin">
                     <i class="fas fa-sign-out-alt"></i> Logout
@@ -1792,6 +1607,12 @@
         // SBJIT engineering campus backend connection
         const BACKEND_URL = "https://my-backend-tiz0.onrender.com";
         let adminLoggedIn = false;
+
+        // Auto-check if admin is already logged in
+        if (localStorage.getItem("adminToken")) {
+            adminLoggedIn = true;
+            console.log('Admin auto-logged in via token');
+        }
 
         // User tracking system
         function generateUserId() {
@@ -1917,13 +1738,11 @@
 
                 const data = await response.json();
                 
-                // Log to console for debugging
                 console.log('User test data saved to backend:', data);
                 
                 return data;
             } catch (error) {
                 console.error('Error saving test data to backend:', error);
-                // Fallback: Show success message even if backend fails
                 alert('Test completed! (Note: Backend connection issue - result not saved)');
                 return { success: false, error: error.message };
             }
@@ -1954,19 +1773,17 @@
                 // Update reviews display
                 displayReviews();
                 
-                // Log to console for debugging
                 console.log('User review saved to backend:', data);
                 
                 return data;
             } catch (error) {
                 console.error('Error saving review to backend:', error);
-                // Fallback: Show success message even if backend fails
                 alert('Review submitted! (Note: Backend connection issue - review not saved)');
                 return { success: false, error: error.message };
             }
         }
 
-        // Fetch reviews from backend
+        // Fetch reviews from backend (public route)
         async function displayReviews() {
             try {
                 const response = await fetch(`${BACKEND_URL}/get-reviews`);
@@ -2037,22 +1854,44 @@
             }
         }
 
-        // Update admin panel with data from backend
+        // Update admin panel with data from backend (PROTECTED ROUTES WITH TOKEN)
         async function updateAdminPanel() {
             try {
-                // Fetch love tests data
-                const loveTestsResponse = await fetch(`${BACKEND_URL}/get-love-tests`);
+                const token = localStorage.getItem("adminToken");
+                
+                if (!token) {
+                    alert('Admin not logged in. Please login again.');
+                    logoutAdmin();
+                    return;
+                }
+                
+                // Fetch love tests data WITH TOKEN
+                const loveTestsResponse = await fetch(`${BACKEND_URL}/get-love-tests`, {
+                    headers: {
+                        "Authorization": "Bearer " + token
+                    }
+                });
                 
                 if (!loveTestsResponse.ok) {
+                    if (loveTestsResponse.status === 401 || loveTestsResponse.status === 403) {
+                        throw new Error('Unauthorized - Token expired or invalid');
+                    }
                     throw new Error(`HTTP error! status: ${loveTestsResponse.status}`);
                 }
                 
                 const loveTests = await loveTestsResponse.json();
                 
-                // Fetch reviews data
-                const reviewsResponse = await fetch(`${BACKEND_URL}/admin/reviews`);
+                // Fetch reviews data WITH TOKEN (CORRECTED ROUTE)
+                const reviewsResponse = await fetch(`${BACKEND_URL}/get-reviews`, {
+                    headers: {
+                        "Authorization": "Bearer " + token
+                    }
+                });
                 
                 if (!reviewsResponse.ok) {
+                    if (reviewsResponse.status === 401 || reviewsResponse.status === 403) {
+                        throw new Error('Unauthorized - Token expired or invalid');
+                    }
                     throw new Error(`HTTP error! status: ${reviewsResponse.status}`);
                 }
                 
@@ -2142,15 +1981,32 @@
                     `;
                     reviewsTableBody.appendChild(row);
                 });
+                
+                console.log('Admin panel updated successfully');
             } catch (error) {
                 console.error('Error fetching data for admin panel:', error);
-                alert('Error loading admin data. Please check your connection.');
+                
+                if (error.message.includes('Unauthorized') || error.message.includes('401') || error.message.includes('403')) {
+                    alert('Session expired or unauthorized. Please login again.');
+                    logoutAdmin();
+                } else {
+                    alert('Error loading admin data. Please check your connection.');
+                }
             }
+        }
+
+        // Logout function
+        function logoutAdmin() {
+            adminLoggedIn = false;
+            localStorage.removeItem("adminToken");
+            document.getElementById('adminPanel').classList.remove('show');
+            document.getElementById('adminToggle').querySelector('i').className = 'fas fa-user-shield';
+            console.log('Admin logged out');
         }
 
         // Initialize admin panel
         function initAdminPanel() {
-            // Toggle admin panel visibility - show login modal first
+            // Toggle admin panel visibility
             document.getElementById('adminToggle').addEventListener('click', function() {
                 if (!adminLoggedIn) {
                     // Show login modal
@@ -2203,8 +2059,10 @@
 
                     const data = await response.json();
                     
-                    if (data.success) {
+                    if (data.success && data.token) {
                         adminLoggedIn = true;
+                        // Store token
+                        localStorage.setItem("adminToken", data.token);
                         
                         // Hide login modal
                         document.getElementById('adminLoginModal').classList.remove('show');
@@ -2240,67 +2098,14 @@
             
             // Logout admin
             document.getElementById('logoutAdmin').addEventListener('click', function() {
-                adminLoggedIn = false;
-                document.getElementById('adminPanel').classList.remove('show');
-                document.getElementById('adminToggle').querySelector('i').className = 'fas fa-user-shield';
+                logoutAdmin();
                 alert('Admin logged out successfully.');
             });
             
-            // Export data
-            document.getElementById('exportData').addEventListener('click', async function() {
-                try {
-                    const response = await fetch(`${BACKEND_URL}/admin/export`);
-                    
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-
-                    const data = await response.json();
-                    const dataStr = JSON.stringify(data, null, 2);
-                    const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-                    const exportFileDefaultName = `sbjit_valentine_data_${new Date().getTime()}.json`;
-                    
-                    const linkElement = document.createElement('a');
-                    linkElement.setAttribute('href', dataUri);
-                    linkElement.setAttribute('download', exportFileDefaultName);
-                    linkElement.click();
-                    
-                    alert('All data exported successfully!');
-                } catch (error) {
-                    console.error('Error exporting data:', error);
-                    alert('Error exporting data. Please try again.');
-                }
-            });
-            
-            // Clear all data
-            document.getElementById('clearData').addEventListener('click', async function() {
-                if (confirm('Are you sure you want to clear ALL data? This action cannot be undone!')) {
-                    try {
-                        const response = await fetch(`${BACKEND_URL}/admin/clear`, {
-                            method: "POST",
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        });
-                        
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-
-                        const data = await response.json();
-                        
-                        if (data.success) {
-                            updateAdminPanel();
-                            displayReviews();
-                            alert('All data has been cleared successfully!');
-                        } else {
-                            alert('Error clearing data: ' + data.message);
-                        }
-                    } catch (error) {
-                        console.error('Error clearing data:', error);
-                        alert('Error clearing data. Please try again.');
-                    }
-                }
+            // Refresh data button
+            document.getElementById('refreshData').addEventListener('click', function() {
+                updateAdminPanel();
+                alert('Data refreshed!');
             });
         }
 
@@ -2453,17 +2258,10 @@
                 alert('Take a screenshot and share on Instagram with #SBJITValentine!');
             });
             
-            // Auto-save form data as user types (optional)
-            document.querySelectorAll('#calculator input, #calculator select').forEach(element => {
-                element.addEventListener('change', function() {
-                    // This could be extended to save partial form data
-                    console.log('Form field changed:', this.id, this.value);
-                });
-            });
-            
             // Log initial page load
             console.log('SBJIT Valentine Platform Loaded with Backend Connection');
             console.log('Backend URL:', BACKEND_URL);
+            console.log('Admin logged in:', adminLoggedIn);
         });
     </script>
 </body>
