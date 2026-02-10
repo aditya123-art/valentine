@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SBJIT Nagpur Valentine's 2026 - Engineering Campus Love</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- FIXED: Correct Google Fonts link -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -554,129 +553,116 @@
             color: white;
         }
 
-        /* User Reviews Section */
-        .reviews-section {
-            background-color: white;
-            border-radius: 25px;
-            padding: 50px;
-            margin-top: 40px;
-            border: 2px solid rgba(12, 35, 64, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .reviews-container {
+        /* Engineering Lab Date Ideas */
+        .lab-date-ideas {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        @media (max-width: 992px) {
-            .reviews-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .review-form {
-            background: #f9f9f9;
+        .lab-card {
+            background-color: white;
             border-radius: 20px;
             padding: 30px;
-        }
-
-        .review-form h3 {
-            color: var(--sbjit-blue);
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .review-form textarea {
-            width: 100%;
-            padding: 18px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 15px;
-            font-size: 1.1rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             transition: all 0.3s;
-            background-color: white;
-            color: #333;
-            resize: vertical;
-            min-height: 120px;
-            font-family: 'Poppins', sans-serif;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
 
-        .review-form textarea:focus {
+        .lab-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             border-color: var(--sbjit-blue);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(12, 35, 64, 0.1);
         }
 
-        .submit-review-btn {
-            background: linear-gradient(135deg, var(--sbjit-gold) 0%, var(--valentine-pink) 100%);
+        .lab-card::after {
+            content: 'SBJIT';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--sbjit-blue);
             color: white;
-            border: none;
-            padding: 18px 40px;
-            font-size: 1.2rem;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 600;
-            box-shadow: 0 8px 20px rgba(255, 184, 28, 0.3);
-            width: 100%;
+        }
+
+        .lab-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--sbjit-blue) 0%, var(--valentine-pink) 100%);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .submit-review-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(255, 184, 28, 0.4);
-        }
-
-        .reviews-list {
-            max-height: 500px;
-            overflow-y: auto;
-            padding-right: 15px;
-        }
-
-        .reviews-list h3 {
-            color: var(--sbjit-blue);
-            margin-bottom: 25px;
+            margin: 0 auto 20px;
             font-size: 1.8rem;
-            font-family: 'Playfair Display', serif;
-            position: sticky;
-            top: 0;
-            background: white;
-            padding: 10px 0;
-            z-index: 1;
+            color: white;
         }
 
-        .review-item {
+        .lab-card h3 {
+            font-size: 1.6rem;
+            color: var(--sbjit-blue);
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .lab-card p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .lab-location {
+            font-size: 1rem;
+            color: var(--sbjit-blue);
+            font-weight: 600;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        /* Engineering Love Stories */
+        .engineering-stories {
+            background: linear-gradient(135deg, rgba(12, 35, 64, 0.05), rgba(255, 77, 109, 0.05));
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        .stories-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--sbjit-blue);
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .story {
             background: white;
             border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--sbjit-gold);
+            border-left: 5px solid var(--valentine-pink);
         }
 
-        .review-header {
+        .story-header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 15px;
             margin-bottom: 15px;
         }
 
-        .reviewer-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .reviewer-avatar {
-            width: 40px;
-            height: 40px;
+        .story-avatar {
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, var(--sbjit-blue), var(--valentine-pink));
             border-radius: 50%;
             display: flex;
@@ -684,120 +670,23 @@
             justify-content: center;
             color: white;
             font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .reviewer-details h4 {
-            color: var(--sbjit-blue);
-            font-size: 1.1rem;
-        }
-
-        .reviewer-details p {
-            color: #777;
-            font-size: 0.85rem;
-        }
-
-        .review-rating {
-            color: var(--sbjit-gold);
             font-size: 1.2rem;
         }
 
-        .review-content {
-            color: #555;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .review-date {
-            color: #999;
-            font-size: 0.85rem;
-            margin-top: 10px;
-            text-align: right;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--sbjit-blue);
-            color: white;
-            padding: 60px 0 30px;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 300px;
-            margin-bottom: 30px;
-        }
-
-        .footer-section h3 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--sbjit-gold);
-        }
-
-        .footer-section p {
-            max-width: 300px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            color: #ccc;
-        }
-
-        .campus-departments {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .campus-departments li {
-            padding: 5px 0;
-            color: #ccc;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .campus-departments li i {
-            color: var(--sbjit-gold);
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 25px;
-        }
-
-        .social-icons a {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s;
-        }
-
-        .social-icons a:hover {
-            background-color: var(--sbjit-gold);
+        .story-author h4 {
             color: var(--sbjit-blue);
-            transform: translateY(-5px);
+            font-size: 1.3rem;
         }
 
-        .copyright {
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.6);
+        .story-author p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .story-content {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.7;
         }
 
         /* Admin Login Modal */
@@ -1097,6 +986,300 @@
         .admin-toggle:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 25px rgba(12, 35, 64, 0.6);
+        }
+
+        /* User Reviews Section */
+        .reviews-section {
+            background-color: white;
+            border-radius: 25px;
+            padding: 50px;
+            margin-top: 40px;
+            border: 2px solid rgba(12, 35, 64, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .reviews-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .reviews-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .review-form {
+            background: #f9f9f9;
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .review-form h3 {
+            color: var(--sbjit-blue);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .review-form textarea {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            background-color: white;
+            color: #333;
+            resize: vertical;
+            min-height: 120px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .review-form textarea:focus {
+            border-color: var(--sbjit-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(12, 35, 64, 0.1);
+        }
+
+        .submit-review-btn {
+            background: linear-gradient(135deg, var(--sbjit-gold) 0%, var(--valentine-pink) 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(255, 184, 28, 0.3);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .submit-review-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 184, 28, 0.4);
+        }
+
+        .reviews-list {
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+
+        .reviews-list h3 {
+            color: var(--sbjit-blue);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 10px 0;
+            z-index: 1;
+        }
+
+        .review-item {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--sbjit-gold);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--sbjit-blue), var(--valentine-pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .reviewer-details h4 {
+            color: var(--sbjit-blue);
+            font-size: 1.1rem;
+        }
+
+        .reviewer-details p {
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        .review-rating {
+            color: var(--sbjit-gold);
+            font-size: 1.2rem;
+        }
+
+        .review-content {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .review-date {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        /* Nagpur Local Spots */
+        .nagpur-spots {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 40px;
+            border: 2px solid rgba(12, 35, 64, 0.1);
+        }
+
+        .spots-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--sbjit-blue);
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .spots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .spot-card {
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .spot-card:hover {
+            border-color: var(--sbjit-gold);
+            transform: translateY(-5px);
+        }
+
+        .spot-card h4 {
+            color: var(--sbjit-blue);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .spot-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--sbjit-blue);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--sbjit-gold);
+        }
+
+        .footer-section p {
+            max-width: 300px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .campus-departments {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .campus-departments li {
+            padding: 5px 0;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .campus-departments li i {
+            color: var(--sbjit-gold);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--sbjit-gold);
+            color: var(--sbjit-blue);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
         }
 
         /* Admin Data Info */
@@ -1605,13 +1788,13 @@
 
     <script>
         // SBJIT engineering campus backend connection
-        const BACKEND_URL = "https://my-backend-tiz0.onrender.com";
+        const BACKEND_URL = "https://my-backend-tiz0.onrender.com".trim();
         let adminLoggedIn = false;
 
         // Auto-check if admin is already logged in
-        if (localStorage.getItem("adminToken")) {
+        const savedToken = localStorage.getItem("adminToken");
+        if (savedToken) {
             adminLoggedIn = true;
-            console.log('Admin auto-logged in via token');
         }
 
         // User tracking system
@@ -1743,8 +1926,7 @@
                 return data;
             } catch (error) {
                 console.error('Error saving test data to backend:', error);
-                alert('Test completed! (Note: Backend connection issue - result not saved)');
-                return { success: false, error: error.message };
+                return { success: false };
             }
         }
 
@@ -1778,15 +1960,16 @@
                 return data;
             } catch (error) {
                 console.error('Error saving review to backend:', error);
-                alert('Review submitted! (Note: Backend connection issue - review not saved)');
-                return { success: false, error: error.message };
+                return { success: false };
             }
         }
 
         // Fetch reviews from backend (public route)
         async function displayReviews() {
             try {
-                const response = await fetch(`${BACKEND_URL}/get-reviews`);
+                const response = await fetch(`${BACKEND_URL}/get-reviews`, {
+                    method: "GET"
+                });
                 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -1860,7 +2043,6 @@
                 const token = localStorage.getItem("adminToken");
                 
                 if (!token) {
-                    alert('Admin not logged in. Please login again.');
                     logoutAdmin();
                     return;
                 }
@@ -1987,10 +2169,7 @@
                 console.error('Error fetching data for admin panel:', error);
                 
                 if (error.message.includes('Unauthorized') || error.message.includes('401') || error.message.includes('403')) {
-                    alert('Session expired or unauthorized. Please login again.');
                     logoutAdmin();
-                } else {
-                    alert('Error loading admin data. Please check your connection.');
                 }
             }
         }
@@ -2051,218 +2230,203 @@
                             username, 
                             password 
                         })
-                    });
+                });
 
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
 
-                    const data = await response.json();
+                const data = await response.json();
+                
+                if (data.success && data.token) {
+                    adminLoggedIn = true;
+                    // Store token
+                    localStorage.setItem("adminToken", data.token);
                     
-                    if (data.success && data.token) {
-                        adminLoggedIn = true;
-                        // Store token
-                        localStorage.setItem("adminToken", data.token);
-                        
-                        // Hide login modal
-                        document.getElementById('adminLoginModal').classList.remove('show');
-                        document.getElementById('loginError').classList.remove('show');
-                        this.reset();
-                        
-                        // Show admin panel
-                        document.getElementById('adminPanel').classList.add('show');
-                        document.getElementById('adminToggle').querySelector('i').className = 'fas fa-eye-slash';
-                        
-                        // Update admin panel with data
-                        updateAdminPanel();
-                        
-                        // Show success message
-                        alert('Admin login successful!');
-                    } else {
-                        // Show error
-                        document.getElementById('loginError').textContent = data.message || 'Invalid credentials';
-                        document.getElementById('loginError').classList.add('show');
-                    }
-                } catch (error) {
-                    console.error('Error during admin login:', error);
-                    document.getElementById('loginError').textContent = 'Connection error. Please try again.';
+                    // Hide login modal
+                    document.getElementById('adminLoginModal').classList.remove('show');
+                    document.getElementById('loginError').classList.remove('show');
+                    this.reset();
+                    
+                    // Show admin panel
+                    document.getElementById('adminPanel').classList.add('show');
+                    document.getElementById('adminToggle').querySelector('i').className = 'fas fa-eye-slash';
+                    
+                    // Update admin panel with data
+                    updateAdminPanel();
+                } else {
+                    // Show error
+                    document.getElementById('loginError').textContent = data.message || 'Invalid credentials';
                     document.getElementById('loginError').classList.add('show');
                 }
-            });
-            
-            // Close admin panel
-            document.getElementById('closeAdmin').addEventListener('click', function() {
-                document.getElementById('adminPanel').classList.remove('show');
-                document.getElementById('adminToggle').querySelector('i').className = 'fas fa-user-shield';
-            });
-            
-            // Logout admin
-            document.getElementById('logoutAdmin').addEventListener('click', function() {
-                logoutAdmin();
-                alert('Admin logged out successfully.');
-            });
-            
-            // Refresh data button
-            document.getElementById('refreshData').addEventListener('click', function() {
-                updateAdminPanel();
-                alert('Data refreshed!');
-            });
-        }
-
-        // Initialize the application
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize features
-            initCountdown();
-            initAdminPanel();
-            displayReviews();
-            
-            // Initialize star rating system
-            const starRatings = document.querySelectorAll('.star-rating');
-            const reviewRatingInput = document.getElementById('reviewRating');
-            
-            starRatings.forEach(star => {
-                star.addEventListener('click', function() {
-                    const rating = parseInt(this.getAttribute('data-rating'));
-                    reviewRatingInput.value = rating;
-                    
-                    // Update star display
-                    starRatings.forEach((s, index) => {
-                        if (index < rating) {
-                            s.textContent = '★';
-                            s.style.color = '#ffb81c';
-                        } else {
-                            s.textContent = '☆';
-                            s.style.color = '#ccc';
-                        }
-                    });
-                });
-                
-                // Add hover effect
-                star.addEventListener('mouseover', function() {
-                    const rating = parseInt(this.getAttribute('data-rating'));
-                    starRatings.forEach((s, index) => {
-                        if (index < rating) {
-                            s.style.color = '#ffb81c';
-                        }
-                    });
-                });
-                
-                star.addEventListener('mouseout', function() {
-                    const currentRating = parseInt(reviewRatingInput.value);
-                    starRatings.forEach((s, index) => {
-                        if (index >= currentRating) {
-                            s.style.color = '#ccc';
-                        }
-                    });
-                });
-            });
-            
-            // Review form submission
-            document.getElementById('reviewForm').addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const reviewerName = document.getElementById('reviewerName').value.trim();
-                const reviewerBranch = document.getElementById('reviewerBranch').value;
-                const rating = parseInt(document.getElementById('reviewRating').value);
-                const reviewText = document.getElementById('reviewText').value.trim();
-                
-                // Validate inputs
-                if (!reviewerName || !reviewerBranch || rating === 0 || !reviewText) {
-                    alert('Please fill in all fields and select a rating.');
-                    return;
-                }
-                
-                if (rating < 1 || rating > 5) {
-                    alert('Please select a rating between 1 and 5 stars.');
-                    return;
-                }
-                
-                // Save review
-                await saveReview(reviewerName, reviewerBranch, rating, reviewText);
-                
-                // Reset form
-                this.reset();
-                reviewRatingInput.value = 0;
-                starRatings.forEach(star => {
-                    star.textContent = '☆';
-                    star.style.color = '#ccc';
-                });
-                
-                // Show success message
-                alert('Thank you for your review! Your feedback has been recorded.');
-                
-                // Scroll to reviews
-                document.getElementById('reviewsList').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-            
-            // Scroll to calculator when CTA button is clicked
-            document.getElementById('startTestBtn').addEventListener('click', function() {
-                document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
-            });
-            
-            // Calculate love compatibility
-            document.getElementById('calculateBtn').addEventListener('click', async function() {
-                // Get form values
-                const userName = document.getElementById('yourName').value.trim();
-                const userBranch = document.getElementById('yourDepartment').value;
-                const crushName = document.getElementById('crushName').value.trim();
-                const crushBranch = document.getElementById('crushDepartment').value;
-                const year = document.getElementById('year').value;
-                const lab = document.getElementById('lab').value;
-                
-                // Validate inputs
-                if (!userName || !userBranch || !crushName || !crushBranch) {
-                    alert('Please fill in all required fields: Your full name, branch, crush\'s full name, and crush\'s branch.');
-                    return;
-                }
-                
-                // Calculate score (always > 50%)
-                const score = calculateEngineeringLoveScore(userName, userBranch, crushName, crushBranch, year, lab);
-                
-                // Save engineering data to backend
-                await saveEngineeringData(userName, userBranch, crushName, crushBranch, year, lab, score);
-                
-                // Display result
-                document.getElementById('resultPercentage').textContent = `${score}%`;
-                document.getElementById('resultMessage').textContent = getEngineeringLoveMessage(score);
-                document.getElementById('resultDescription').textContent = getEngineeringLoveDescription(score, userBranch, crushBranch);
-                
-                // Show result with animation
-                const resultContainer = document.getElementById('resultContainer');
-                resultContainer.classList.remove('show');
-                setTimeout(() => {
-                    resultContainer.classList.add('show');
-                }, 10);
-                
-                // Scroll to result
-                setTimeout(() => {
-                    resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 500);
-                
-                // Show success message
-                alert('Your compatibility test has been recorded!');
-            });
-            
-            // Share buttons
-            document.getElementById('shareWhatsapp').addEventListener('click', function() {
-                const score = document.getElementById('resultPercentage').textContent;
-                const message = document.getElementById('resultMessage').textContent;
-                const text = `My SBJIT engineering love score is ${score}! ${message} Check out your compatibility at SBJIT Valentine's 2026!`;
-                const encodedText = encodeURIComponent(text);
-                window.open(`https://wa.me/?text=${encodedText}`, '_blank');
-            });
-            
-            document.getElementById('shareInstagram').addEventListener('click', function() {
-                const score = document.getElementById('resultPercentage').textContent;
-                const text = `My SBJIT engineering love score is ${score}! 💙💛 #SBJITValentine #EngineeringCrush`;
-                alert('Take a screenshot and share on Instagram with #SBJITValentine!');
-            });
-            
-            // Log initial page load
-            console.log('SBJIT Valentine Platform Loaded with Backend Connection');
-            console.log('Backend URL:', BACKEND_URL);
-            console.log('Admin logged in:', adminLoggedIn);
+            } catch (error) {
+                console.error('Error during admin login:', error);
+                document.getElementById('loginError').textContent = 'Connection error. Please try again.';
+                document.getElementById('loginError').classList.add('show');
+            }
         });
-    </script>
+        
+        // Close admin panel
+        document.getElementById('closeAdmin').addEventListener('click', function() {
+            document.getElementById('adminPanel').classList.remove('show');
+            document.getElementById('adminToggle').querySelector('i').className = 'fas fa-user-shield';
+        });
+        
+        // Logout admin
+        document.getElementById('logoutAdmin').addEventListener('click', function() {
+            logoutAdmin();
+        });
+        
+        // Refresh data button
+        document.getElementById('refreshData').addEventListener('click', function() {
+            updateAdminPanel();
+        });
+    }
+
+    // Initialize the application
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize features
+        initCountdown();
+        initAdminPanel();
+        displayReviews();
+        
+        // Initialize star rating system
+        const starRatings = document.querySelectorAll('.star-rating');
+        const reviewRatingInput = document.getElementById('reviewRating');
+        
+        starRatings.forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = parseInt(this.getAttribute('data-rating'));
+                reviewRatingInput.value = rating;
+                
+                // Update star display
+                starRatings.forEach((s, index) => {
+                    if (index < rating) {
+                        s.textContent = '★';
+                        s.style.color = '#ffb81c';
+                    } else {
+                        s.textContent = '☆';
+                        s.style.color = '#ccc';
+                    }
+                });
+            });
+            
+            // Add hover effect
+            star.addEventListener('mouseover', function() {
+                const rating = parseInt(this.getAttribute('data-rating'));
+                starRatings.forEach((s, index) => {
+                    if (index < rating) {
+                        s.style.color = '#ffb81c';
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseout', function() {
+                const currentRating = parseInt(reviewRatingInput.value);
+                starRatings.forEach((s, index) => {
+                    if (index >= currentRating) {
+                        s.style.color = '#ccc';
+                    }
+                });
+            });
+        });
+        
+        // Review form submission
+        document.getElementById('reviewForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const reviewerName = document.getElementById('reviewerName').value.trim();
+            const reviewerBranch = document.getElementById('reviewerBranch').value;
+            const rating = parseInt(document.getElementById('reviewRating').value);
+            const reviewText = document.getElementById('reviewText').value.trim();
+            
+            // Validate inputs
+            if (!reviewerName || !reviewerBranch || rating === 0 || !reviewText) {
+                return;
+            }
+            
+            if (rating < 1 || rating > 5) {
+                return;
+            }
+            
+            // Save review
+            await saveReview(reviewerName, reviewerBranch, rating, reviewText);
+            
+            // Reset form
+            this.reset();
+            reviewRatingInput.value = 0;
+            starRatings.forEach(star => {
+                star.textContent = '☆';
+                star.style.color = '#ccc';
+            });
+            
+            // Scroll to reviews
+            document.getElementById('reviewsList').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        
+        // Scroll to calculator when CTA button is clicked
+        document.getElementById('startTestBtn').addEventListener('click', function() {
+            document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Calculate love compatibility
+        document.getElementById('calculateBtn').addEventListener('click', async function() {
+            // Get form values
+            const userName = document.getElementById('yourName').value.trim();
+            const userBranch = document.getElementById('yourDepartment').value;
+            const crushName = document.getElementById('crushName').value.trim();
+            const crushBranch = document.getElementById('crushDepartment').value;
+            const year = document.getElementById('year').value;
+            const lab = document.getElementById('lab').value;
+            
+            // Validate inputs
+            if (!userName || !userBranch || !crushName || !crushBranch) {
+                return;
+            }
+            
+            // Calculate score (always > 50%)
+            const score = calculateEngineeringLoveScore(userName, userBranch, crushName, crushBranch, year, lab);
+            
+            // Save engineering data to backend
+            await saveEngineeringData(userName, userBranch, crushName, crushBranch, year, lab, score);
+            
+            // Display result
+            document.getElementById('resultPercentage').textContent = `${score}%`;
+            document.getElementById('resultMessage').textContent = getEngineeringLoveMessage(score);
+            document.getElementById('resultDescription').textContent = getEngineeringLoveDescription(score, userBranch, crushBranch);
+            
+            // Show result with animation
+            const resultContainer = document.getElementById('resultContainer');
+            resultContainer.classList.remove('show');
+            setTimeout(() => {
+                resultContainer.classList.add('show');
+            }, 10);
+            
+            // Scroll to result
+            setTimeout(() => {
+                resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+        });
+        
+        // Share buttons
+        document.getElementById('shareWhatsapp').addEventListener('click', function() {
+            const score = document.getElementById('resultPercentage').textContent;
+            const message = document.getElementById('resultMessage').textContent;
+            const text = `My SBJIT engineering love score is ${score}! ${message} Check out your compatibility at SBJIT Valentine's 2026!`;
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/?text=${encodedText}`, '_blank');
+        });
+        
+        document.getElementById('shareInstagram').addEventListener('click', function() {
+            const score = document.getElementById('resultPercentage').textContent;
+            const text = `My SBJIT engineering love score is ${score}! 💙💛 #SBJITValentine #EngineeringCrush`;
+        });
+        
+        // Log initial page load
+        console.log('SBJIT Valentine Platform Loaded');
+        console.log('Backend URL:', BACKEND_URL);
+        console.log('Admin logged in:', adminLoggedIn);
+    });
+</script>
 </body>
 </html>
