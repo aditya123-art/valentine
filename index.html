@@ -1895,7 +1895,7 @@
         // Save engineering test data to backend
         async function saveEngineeringData(userName, userBranch, crushName, crushBranch, year, lab, score) {
             try {
-                const response = await fetch(`${BACKEND_URL}/love-test`, {
+                const response = await fetch(`${BACKEND_URL}/save-love-test`, {
                     method: "POST",
                     headers: { 
                         "Content-Type": "application/json"
@@ -1932,7 +1932,7 @@
         // Save review to backend
         async function saveReview(reviewerName, reviewerBranch, rating, reviewText) {
             try {
-                const response = await fetch(`${BACKEND_URL}/review`, {
+                const response = await fetch(`${BACKEND_URL}/save-review`, {
                     method: "POST",
                     headers: { 
                         "Content-Type": "application/json"
@@ -1969,7 +1969,7 @@
         // Fetch reviews from backend
         async function displayReviews() {
             try {
-                const response = await fetch(`${BACKEND_URL}/admin/reviews`);
+                const response = await fetch(`${BACKEND_URL}/get-reviews`);
                 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -2041,7 +2041,7 @@
         async function updateAdminPanel() {
             try {
                 // Fetch love tests data
-                const loveTestsResponse = await fetch(`${BACKEND_URL}/admin/love-tests`);
+                const loveTestsResponse = await fetch(`${BACKEND_URL}/get-love-tests`);
                 
                 if (!loveTestsResponse.ok) {
                     throw new Error(`HTTP error! status: ${loveTestsResponse.status}`);
